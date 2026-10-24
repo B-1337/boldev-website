@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bold EV · Home</title>
+<script>if(window.innerWidth<760){location.replace('m-index.html'+location.hash);}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ffffff}
+*{box-sizing:border-box}
+a{color:#003070}a:hover{color:#00214f}
+:focus-visible{outline:3px solid #ff8036;outline-offset:3px}
+@keyframes boldspin{to{transform:rotate(360deg)}}
+@keyframes boldnudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@keyframes boldfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes boldtoast{from{opacity:0;transform:translate(-50%,14px)}to{opacity:1;transform:translate(-50%,0)}}
+html{scroll-behavior:smooth}
+a,button{transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .15s ease,filter .2s ease}
+a[style*="border-radius"]:hover,button[style*="border-radius"]:hover{filter:brightness(0.95);box-shadow:0 6px 18px rgba(0,33,79,0.16);transform:translateY(-1px)}
+a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform:translateY(0) scale(0.98);box-shadow:none}
+a[aria-label^="Bekijk de video"] img{transition:transform .5s ease}a[aria-label^="Bekijk de video"]:hover img{transform:scale(1.05)}a[aria-label^="Bekijk de video"] span[style*="#ff8036"]{transition:transform .25s ease,box-shadow .25s ease}a[aria-label^="Bekijk de video"]:hover span[style*="#ff8036"]{transform:scale(1.12);box-shadow:0 10px 30px rgba(0,0,0,.4)}a[aria-label^="Bekijk de video"] span[style*="0.12)"]{transition:background-color .3s ease}a[aria-label^="Bekijk de video"]:hover span[style*="0.12)"]{background-color:rgba(0,18,40,.22)!important}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition-duration:1ms !important}[data-fade],[data-fade] *{animation-name:none !important}}
+</style>
+<link rel="icon" href="img/5877295f782f172bdb42c6c44ba08c86.png">
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+
+<div data-fade onClick="{{ ui.rootClick }}" style="font-family: 'Poppins', system-ui, sans-serif; color: #1a2433; font-size: 18px; line-height: 1.6; background: #ffffff; width: 100%; animation: boldfade 420ms ease both">
+
+<!-- Actiebalk -->
+<div style="background: #00214f; color: #ffffff; padding: 12px 24px; display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 17px; text-align: center">
+<span><strong style="color: #ff8036; font-weight: 600">Tijdelijk:</strong> topkoffer t.w.v. €150 gratis bij elke Bold Titan</span>
+<a href="titan.html" style="color: #ffffff; font-weight: 600; text-underline-offset: 4px">Bekijk de actie</a>
+</div>
+
+<!-- Header -->
+<header style="background: #ffffff; border-bottom: 1px solid #e3e7ee; position: sticky; top: 0; z-index: 20">
+<div style="max-width: 1280px; margin: 0 auto; padding: 14px 40px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px">
+<a href="index.html" aria-label="Bold EV, naar de homepage" style="display: flex; align-items: center; gap: 12px; text-decoration: none">
+<img src="img/5877295f782f172bdb42c6c44ba08c86.png" alt="" style="width: 48px; height: 48px; display: block">
+<img src="img/d0d18112136b88d0c9b4622987239b06.png" alt="Bold" style="height: 26px; width: auto; display: block">
+</a>
+<nav aria-label="Hoofdmenu" style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap">
+<div style="position: relative" onMouseEnter="{{ nav.hoverOpen }}" onMouseLeave="{{ nav.hoverClose }}">
+<button type="button" onClick="{{ nav.toggleDd }}" aria-expanded="{{ nav.ddOpen }}" aria-controls="dd-modellen" style="{{ nav.ddBtn }}">Modellen
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="{{ nav.chev }}"><path d="m6 9 6 6 6-6"></path></svg></button>
+<sc-if value="{{ nav.ddOpen }}" hint-placeholder-val="{{ false }}">
+<div id="dd-modellen" style="position: absolute; top: calc(100% + 10px); left: 50%; margin-left: -220px; width: 440px; background: #ffffff; border: 1px solid #e3e7ee; border-radius: 18px; box-shadow: 0 18px 40px rgba(0, 33, 79, 0.16); padding: 10px; z-index: 30; display: flex; flex-direction: column; gap: 4px; animation: boldfade 180ms ease both">
+<a href="cura.html" style="display: flex; gap: 16px; align-items: center; padding: 10px; border-radius: 12px; text-decoration: none; color: #1a2433"><img src="img/7bbf2f938fc25c9f9567665b24eb4f1c.jpg" alt="" style="width: 110px; height: 76px; object-fit: contain; background: #ffffff; border-radius: 10px; flex: none"><span><strong style="display: block; color: #003070; font-size: 19px">Bold Cura</strong><span style="color: #4a5566; font-size: 16px">v.a. <strong style="color: #1a2433">€7.090</strong></span></span></a>
+<a href="titan.html" style="display: flex; gap: 16px; align-items: center; padding: 10px; border-radius: 12px; text-decoration: none; color: #1a2433"><img src="img/081933fc3ed3685fc909a7f2a10eccf9.jpg" alt="" style="width: 110px; height: 76px; object-fit: contain; background: #ffffff; border-radius: 10px; flex: none"><span><strong style="display: block; color: #003070; font-size: 19px">Bold Titan</strong><span style="color: #4a5566; font-size: 16px">v.a. <strong style="color: #1a2433">€2.699</strong></span></span></a>
+</div>
+</sc-if>
+</div>
+<a href="proefrit.html" style="display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 0 16px; border-radius: 10px; color: #1a2433; font-weight: 500; text-decoration: none">Proefrit</a>
+<a href="contact.html" style="display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 0 16px; border-radius: 10px; color: #1a2433; font-weight: 500; text-decoration: none">Contact</a>
+<a href="https://boldev.brincr.com/portal/" style="display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 0 16px; border-radius: 10px; color: #1a2433; font-weight: 500; text-decoration: none">Dealer login
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"></path></svg></a>
+</nav>
+<div aria-hidden="true"></div>
+</div>
+</header>
+
+<!-- Hero -->
+<section style="position: relative; overflow: hidden; min-height: clamp(680px, 46vw, 1080px); display: flex; align-items: center; background: #dfe6ee">
+<img src="img/ad226f5e247f7ea81aab957b8a9a619d.jpg" alt="Een vrouw rijdt glimlachend in een rode Bold Cura over een landweg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 56%; display: block">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to left, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.93) 40%, rgba(255,255,255,0.55) 53%, rgba(255,255,255,0) 64%)"></div>
+<div style="position: relative; width: 100%; padding: 80px max(120px, calc((100% - 1280px) / 2 + 40px)) 180px 40px; display: flex; justify-content: flex-end">
+<div style="width: 560px; max-width: 100%">
+<p style="margin: 0 0 16px; color: #b24a0a; font-weight: 600; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase">Rijbewijsvrij en 100% elektrisch</p>
+<h1 style="margin: 0 0 20px; font-size: 54px; line-height: 1.08; font-weight: 700; color: #003070; letter-spacing: -0.01em">Weer mobiel, weer onafhankelijk</h1>
+<p style="margin: 0 0 32px; font-size: 21px; line-height: 1.6; color: #2b3646">Even naar de bakker of op visite bij de kleinkinderen. Zelf, wanneer jij dat wilt. Zonder rijbewijs.</p>
+<div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 36px">
+<a href="#modellen" style="display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 0 30px; border-radius: 14px; background: #ff8036; color: #00214f; font-weight: 600; font-size: 19px; text-decoration: none">Offerte aanvragen
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="proefrit.html" style="display: inline-flex; align-items: center; min-height: 60px; padding: 0 30px; border-radius: 14px; border: 2px solid #003070; color: #003070; font-weight: 600; font-size: 19px; text-decoration: none; background: #ffffff">Gratis proefrit</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px 28px; color: #3b4656; font-size: 17px">
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="display: inline-flex; color: #e0a100" aria-hidden="true">
+<svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg></span><strong style="color: #1a2433">5,0</strong> op Google</span>
+<span>14 dagen tevredenheidsgarantie</span>
+</div>
+</div>
+</div>
+<div style="position: absolute; left: 0; right: 0; bottom: 0; padding-top: 70px; background: linear-gradient(to top, rgba(0, 18, 40, 0.62) 0%, rgba(0, 18, 40, 0.35) 55%, rgba(0, 18, 40, 0) 100%)">
+<div role="list" aria-label="Waarom Bold" style="max-width: 1280px; margin: 0 auto; padding: 0 40px 22px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px 24px">
+<div role="listitem" style="display: flex; gap: 14px; align-items: center; justify-content: center; width: 280px"><span style="flex: none; display: inline-flex; width: 48px; height: 48px; border-radius: 12px; background: rgba(255, 255, 255, 0.2); color: #ffffff; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M7 15h4M7 11h10"></path></svg></span><span style="font-weight: 600; line-height: 1.4; color: #ffffff; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45)">Geen rijbewijs nodig</span></div>
+<div role="listitem" style="display: flex; gap: 14px; align-items: center; justify-content: center; width: 280px"><span style="flex: none; display: inline-flex; width: 48px; height: 48px; border-radius: 12px; background: rgba(255, 255, 255, 0.2); color: #ffffff; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 6.5A7 7 0 1 0 17 17.5M4 10h9M4 14h9"></path></svg></span><span style="font-weight: 600; line-height: 1.4; color: #ffffff; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45)">Geen wegenbelasting</span></div>
+<div role="listitem" style="display: flex; gap: 14px; align-items: center; justify-content: center; width: 280px"><span style="flex: none; display: inline-flex; width: 48px; height: 48px; border-radius: 12px; background: rgba(255, 255, 255, 0.2); color: #ffffff; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span><span style="font-weight: 600; line-height: 1.4; color: #ffffff; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45)">Vergoeding via WMO</span></div>
+</div>
+</div>
+</section>
+
+<!-- Modellen -->
+<section id="modellen" style="padding: 48px 0 96px">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 40px">
+<div style="text-align: center; margin: 0 auto 48px">
+<h2 style="margin: 0 0 16px; font-size: 44px; line-height: 1.15; color: #003070; font-weight: 700; white-space: nowrap">Twee manieren om zelfstandig op pad te gaan</h2>
+<p style="margin: 0 auto; color: #3b4656; font-size: 20px; max-width: 60ch">Overdekt en warm met de Cura, of compact en wendbaar met de Titan.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 32px">
+
+<article style="flex: 1 1 480px; min-width: 0; border: 1px solid #e3e7ee; border-radius: 28px; overflow: hidden; background: #ffffff; display: flex; flex-direction: column">
+<div style="background: #ffffff; padding: 24px 24px 0; position: relative">
+<span style="position: absolute; top: 24px; left: 24px; padding: 6px 14px; border-radius: 999px; background: #e8eef7; color: #003070; font-weight: 600; font-size: 15px">Overdekt en warm</span>
+<a href="cura.html" aria-label="Bekijk de Bold Cura" style="display: block"><img src="{{ cura.img }}" alt="{{ cura.alt }}" style="width: 100%; height: 340px; object-fit: contain; display: block"></a>
+</div>
+<div style="padding: 8px 40px 0">
+<p style="margin: 0 0 10px; font-size: 16px; color: #4a5566">Kleur: <strong style="color: #1a2433">{{ cura.colorName }}</strong></p>
+<div role="group" aria-label="Kies een kleur" style="display: flex; gap: 12px">
+<sc-for list="{{ cura.colors }}" as="c" hint-placeholder-count="4">
+<button type="button" aria-label="{{ c.name }}" aria-pressed="{{ c.selected }}" onClick="{{ c.pick }}" style="{{ c.style }}"><span style="{{ c.dot }}"></span></button>
+</sc-for>
+</div>
+</div>
+<div style="padding: 24px 40px 40px; display: flex; flex-direction: column; gap: 18px; flex: 1">
+<h3 style="margin: 0; font-size: 34px; color: #003070; font-weight: 700; line-height: 1.2"><a href="cura.html" style="color: inherit; text-decoration: none">Bold Cura</a></h3>
+<p style="margin: 0; color: #3b4656">Een auto-achtig gehandicaptenvoertuig met kachel, achteruitrijcamera en draaistoel. Achterin is plek voor een passagier.</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: nowrap; gap: 10px">
+<li style="padding: 8px 14px; border-radius: 8px; background: #f7f5f1; font-size: 16px; font-weight: 500">Tot ± 120 km</li>
+<li style="padding: 8px 14px; border-radius: 8px; background: #f7f5f1; white-space: nowrap; font-size: 16px; font-weight: 500">2 zitplaatsen</li>
+<li style="padding: 8px 14px; border-radius: 8px; background: #f7f5f1; white-space: nowrap; font-size: 16px; font-weight: 500">2 jaar garantie</li>
+</ul>
+<div style="margin-top: auto; padding-top: 12px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
+<div>
+<p style="margin: 0; font-size: 16px; color: #4a5566">Vanaf</p>
+<p style="margin: 0; font-size: 36px; font-weight: 700; color: #1a2433; line-height: 1.1">€7.090</p>
+<p style="margin: 4px 0 0; font-size: 16px; color: #4a5566">of vanaf €149 per maand*</p>
+</div>
+<div style="display: flex; gap: 12px; flex-wrap: wrap">
+<a href="proefrit.html" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 22px; border-radius: 12px; border: 2px solid #003070; color: #003070; font-weight: 600; text-decoration: none">Gratis proefrit</a>
+<a href="cura.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 56px; padding: 0 22px; border-radius: 12px; background: #003070; color: #ffffff; font-weight: 600; text-decoration: none">Bekijk de Cura
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</div>
+</article>
+
+<article style="flex: 1 1 480px; min-width: 0; border: 1px solid #e3e7ee; border-radius: 28px; overflow: hidden; background: #ffffff; display: flex; flex-direction: column">
+<div style="padding: 24px 24px 0; position: relative">
+<span style="position: absolute; top: 24px; left: 24px; padding: 6px 14px; border-radius: 999px; background: #fff0e6; color: #8a3a08; font-weight: 600; font-size: 15px; z-index: 1">Actie: topkoffer t.w.v. €150 gratis</span>
+<a href="titan.html" aria-label="Bekijk de Bold Titan" style="display: block"><img src="{{ titan.img }}" alt="{{ titan.alt }}" style="width: 100%; height: 340px; object-fit: contain; display: block"></a>
+</div>
+<div style="padding: 8px 40px 0">
+<p style="margin: 0 0 10px; font-size: 16px; color: #4a5566">Kleur: <strong style="color: #1a2433">{{ titan.colorName }}</strong></p>
+<div role="group" aria-label="Kies een kleur voor de Titan" style="display: flex; gap: 12px">
+<sc-for list="{{ titan.colors }}" as="c" hint-placeholder-count="4">
+<button type="button" aria-label="{{ c.name }}" aria-pressed="{{ c.selected }}" onClick="{{ c.pick }}" style="{{ c.style }}"><span style="{{ c.dot }}"></span></button>
+</sc-for>
+</div>
+</div>
+<div style="padding: 24px 40px 40px; display: flex; flex-direction: column; gap: 18px; flex: 1">
+<h3 style="margin: 0; font-size: 34px; color: #003070; font-weight: 700; line-height: 1.2"><a href="titan.html" style="color: inherit; text-decoration: none">Bold Titan</a></h3>
+<p style="margin: 0; color: #3b4656">Een elektrische driewiel-scootmobiel met uitneembare accu. Die laad je gewoon binnen op. Stel hem samen zoals jij wilt.</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: nowrap; gap: 10px">
+<li style="padding: 8px 14px; border-radius: 8px; background: #f7f5f1; font-size: 16px; font-weight: 500">Tot 120 km</li>
+<li style="padding: 8px 14px; border-radius: 8px; background: #f7f5f1; white-space: nowrap; font-size: 16px; font-weight: 500">Tot 25 km/u</li>
+<li style="padding: 8px 14px; border-radius: 8px; background: #f7f5f1; white-space: nowrap; font-size: 16px; font-weight: 500">Uitneembare accu</li>
+</ul>
+<div style="margin-top: auto; padding-top: 12px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
+<div>
+<p style="margin: 0; font-size: 16px; color: #4a5566">Vanaf</p>
+<p style="margin: 0; font-size: 36px; font-weight: 700; color: #1a2433; line-height: 1.1">€2.699</p>
+<p style="margin: 4px 0 0; font-size: 16px; color: #4a5566">ook gespreid te betalen*</p>
+</div>
+<div style="display: flex; gap: 12px; flex-wrap: wrap">
+<a href="proefrit.html" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 22px; border-radius: 12px; border: 2px solid #003070; color: #003070; font-weight: 600; text-decoration: none">Gratis proefrit</a>
+<a href="titan.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 56px; padding: 0 22px; border-radius: 12px; background: #003070; color: #ffffff; font-weight: 600; text-decoration: none">Bekijk de Titan
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</div>
+</article>
+</div>
+<p style="margin: 24px 0 0; font-size: 16px; color: #4a5566">* Gespreid betalen tot 60 maanden. Vraag naar de exacte mogelijkheden in je offerte. <strong style="color: #1a2433">Let op! Geld lenen kost geld.</strong></p>
+</div>
+</section>
+
+<!-- Video -->
+<section aria-labelledby="video-kop" style="background: #eaf0f8; padding: 96px 0">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 40px">
+<h2 id="video-kop" style="margin: 0 0 40px; font-size: 44px; line-height: 1.15; color: #003070; font-weight: 700">Zie de Cura in actie</h2>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px">
+<sc-for list="{{ vids }}" as="v" hint-placeholder-count="2">
+<figure style="margin: 0">
+<div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: #00214f">
+<a href="{{ v.url }}" target="_blank" rel="noopener" aria-label="{{ v.label }}" style="display: block; position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: none; cursor: pointer; background: #00214f">
+<img src="{{ v.poster }}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: {{ v.pos }}; filter: {{ v.filter }}; display: block">
+<span aria-hidden="true" style="position: absolute; inset: 0; background: rgba(0, 18, 40, 0.12)"></span>
+<span aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 88px; height: 88px; margin: -44px 0 0 -44px; border-radius: 50%; background: #ff8036; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3)"><svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00214f" d="M8 5.5v13l11-6.5z"></path></svg></span>
+</a>
+</div>
+<figcaption style="margin-top: 14px"><strong style="display: block; font-size: 21px; color: #1a2433">{{ v.title }}</strong><span style="color: #3b4656">{{ v.desc }}</span></figcaption>
+</figure>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- Vergoeding & betalen -->
+<section id="vergoeding" style="background: #f7f5f1; padding: 88px 0">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 40px">
+<h2 style="margin: 0 0 36px; font-size: 44px; line-height: 1.15; color: #003070; font-weight: 700">Betaalbaar, ook via de gemeente</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+<div style="padding: 28px; border-radius: 20px; background: #ffffff"><h3 style="margin: 0 0 6px; font-size: 22px; font-weight: 600">Via de WMO of een PGB</h3><p style="margin: 0; color: #3b4656">Je gemeente kan het voertuig soms vergoeden. De aanvraag doe je zelf bij je gemeente.</p></div>
+<div style="padding: 28px; border-radius: 20px; background: #ffffff"><h3 style="margin: 0 0 6px; font-size: 22px; font-weight: 600">Gespreid betalen</h3><p style="margin: 0; color: #3b4656">Tot 60 maanden. De Bold Cura kan vanaf €149 per maand.*</p></div>
+<div style="padding: 28px; border-radius: 20px; background: #ffffff"><h3 style="margin: 0 0 6px; font-size: 22px; font-weight: 600">Lage kosten onderweg</h3><p style="margin: 0; color: #3b4656">€0 wegenbelasting. Alleen een WA-verzekering is verplicht.</p></div>
+</div>
+</div>
+</section>
+
+<!-- Dealerzoeker -->
+<section id="dealers" style="position: relative; overflow: hidden; min-height: clamp(720px, 54vw, 1280px); display: flex; align-items: center; background: #dfe6ee">
+<img src="img/1e3d01291865ebcf9e16d934419c0688.jpg" alt="Een rode Bold Cura rijdt over een plein" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 0%; display: block">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to left, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.93) 40%, rgba(255,255,255,0.55) 53%, rgba(255,255,255,0) 64%)"></div>
+<div style="position: relative; width: 100%; padding: 80px max(120px, calc((100% - 1280px) / 2 + 40px)) 80px 40px; display: flex; justify-content: flex-end">
+<div style="width: 560px; max-width: 100%">
+<div>
+<h2 style="margin: 0 0 16px; font-size: 44px; line-height: 1.15; color: #003070; font-weight: 700">Een Bold-dealer bij jou in de buurt</h2>
+<p style="margin: 0 0 28px; color: #3b4656; font-size: 20px">Er zijn 17 locaties in Nederland. Daar kun je proefrijden en krijg je persoonlijk advies en service.</p>
+<div role="form" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end">
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 8px">
+<label for="pc" style="font-weight: 600">Je postcode</label>
+<input id="pc" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="Bijv. 8239" value="{{ dz.pc }}" onChange="{{ dz.onPc }}" onKeyDown="{{ dz.onKey }}" style="min-height: 60px; padding: 0 18px; border-radius: 12px; border: 2px solid #8a96a8; font: 500 19px 'Poppins', sans-serif; color: #1a2433; background: #ffffff; width: 100%">
+</div>
+<button type="button" onClick="{{ dz.search }}" style="min-height: 60px; padding: 0 28px; border-radius: 12px; border: none; background: #003070; color: #ffffff; font: 600 19px 'Poppins', sans-serif; cursor: pointer">{{ dz.btnLabel }}</button>
+</div>
+<sc-if value="{{ dz.hasMsg }}" hint-placeholder-val="{{ false }}">
+<p role="status" style="margin: 16px 0 0; padding: 14px 18px; border-radius: 12px; background: #fff0e6; color: #6e2e06">{{ dz.msg }}</p>
+</sc-if>
+</div>
+<sc-if value="{{ dz.hasResults }}" hint-placeholder-val="{{ false }}">
+<p style="margin: 32px 0 12px; font-weight: 600">De 3 dichtstbijzijnde locaties bij {{ dz.where }}</p>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; animation: boldfade 350ms ease both">
+<sc-for list="{{ dz.results }}" as="d" hint-placeholder-count="3">
+<li style="padding: 20px 22px; border-radius: 12px; border: 1px solid #e3e7ee; background: #ffffff; box-shadow: 0 4px 14px rgba(0, 33, 79, 0.06)">
+<div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+<div>
+<p style="margin: 0; font-size: 20px; font-weight: 600; color: #003070">{{ d.name }}</p>
+<p style="margin: 2px 0 0; color: #3b4656">{{ d.address }}</p>
+</div>
+<p style="margin: 0; font-weight: 600; white-space: nowrap">± {{ d.km }} km</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px">
+<a href="{{ d.tel }}" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 16px; border-radius: 8px; border: 2px solid #c9d3e2; color: #003070; font-weight: 600; text-decoration: none">{{ d.phone }}</a>
+<a href="{{ d.maps }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 16px; border-radius: 8px; background: #003070; color: #ffffff; font-weight: 600; text-decoration: none">Route en openingstijden <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"></path></svg></a>
+</div>
+</li>
+</sc-for>
+</ol>
+<p style="margin: 10px 0 0; font-size: 16px; color: #4a5566">Afstand hemelsbreed, als indicatie.</p>
+</sc-if>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer id="contact" style="background: #00214f; color: #d6e0ef; padding: 80px 0 40px; font-size: 17px">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 40px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<img src="img/d0d18112136b88d0c9b4622987239b06.png" alt="Bold" style="height: 28px; width: auto; align-self: flex-start; margin-bottom: 12px">
+<p style="margin: 0">Bold EV<br>Artemisweg 260<br>8239 DE Lelystad</p>
+<p style="margin: 0; font-size: 16px">Bezoek op afspraak</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 6px; color: #ffffff; font-weight: 600">Contact</p>
+<a href="tel:+31850805282" style="color: #ffffff; text-decoration: none; min-height: 32px">085 080 52 82</a>
+<a href="https://wa.me/31683801610" style="color: #ffffff; text-decoration: none; min-height: 32px">WhatsApp +31 6 83801610</a>
+<a href="mailto:info@boldev.nl" style="color: #ffffff; text-decoration: none; min-height: 32px">info@boldev.nl</a>
+<p style="margin: 6px 0 0; font-size: 16px">Vragen over service, garantie of onderdelen? Die gaan via je dealer.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 6px; color: #ffffff; font-weight: 600">Particulier</p>
+<a href="cura.html" style="color: #d6e0ef; text-decoration: none; min-height: 32px">Bold Cura</a>
+<a href="titan.html" style="color: #d6e0ef; text-decoration: none; min-height: 32px">Bold Titan</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0 0 6px; color: #ffffff; font-weight: 600">Zakelijk</p>
+<a href="dealer-worden.html" style="color: #d6e0ef; text-decoration: none; min-height: 32px">Dealer worden</a>
+<a href="https://boldev.brincr.com/portal/" style="display: inline-flex; align-items: center; gap: 8px; color: #d6e0ef; text-decoration: none; min-height: 32px">Dealer login
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"></path></svg></a>
+</div>
+</div>
+<div style="margin-top: 56px; padding-top: 24px; border-top: 1px solid #1f3d6b; display: flex; flex-wrap: wrap; gap: 12px 28px; font-size: 16px">
+<span>© 2026 Bold EV</span>
+<a href="privacy.html" style="color: #d6e0ef">Privacyverklaring</a>
+<a href="voorwaarden.html" style="color: #d6e0ef">Algemene voorwaarden</a>
+</div>
+</div>
+</footer>
+<sc-if value="{{ ui.leaving }}" hint-placeholder-val="{{ false }}">
+<div aria-live="polite" style="position: fixed; inset: 0; z-index: 80; background: rgba(255, 255, 255, 0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; animation: boldfade 220ms ease both">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 50%; border: 5px solid #e3e7ee; border-top-color: #ff8036; animation: boldspin 900ms linear infinite; display: block"></span>
+<p style="margin: 0; font-weight: 600; color: #003070">Even geduld…</p>
+</div>
+</sc-if>
+<sc-if value="{{ ui.toastOn }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="position: fixed; left: 50%; bottom: 32px; z-index: 90; width: max-content; max-width: calc(100% - 32px); background: #00214f; color: #ffffff; padding: 16px 24px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); font-weight: 500; text-align: center; animation: boldtoast 300ms ease both">{{ ui.toastText }}</div>
+</sc-if>
+</div>
+</template>
+<script src="assets/dc.js"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { dd: false, sub: false, toast: '', leaving: false, searching: false, sending: false, color: 0, step: 0, a: {}, vis: 'shown', loading: false, pc: '', results: null, msg: '', where: '' };
+  }
+  componentDidMount() {
+    try { this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { this.reduce = false; }
+  }
+  componentWillUnmount() { (this.timers || []).forEach(clearTimeout); }
+  later(ms, fn) { this.timers = this.timers || []; this.timers.push(setTimeout(fn, ms)); }
+  // Laat de huidige inhoud wegfaden, past de state aan en fade de nieuwe inhoud in.
+  swap(changes, done) {
+    var self = this;
+    if (this.reduce) { this.setState(changes()); if (done) done(); return; }
+    this.setState({ vis: 'leaving' });
+    this.later(240, function () {
+      var ch = changes(); ch.vis = 'entering'; self.setState(ch);
+      self.later(30, function () { self.setState({ vis: 'shown' }); self.later(260, function () { if (done) done(); }); });
+    });
+  }
+  renderVals() {
+    var self = this, s = this.state;
+    var COLORS = [
+      { name: 'Kersen Rood', hex: '#9e1424', img: 'img/7bbf2f938fc25c9f9567665b24eb4f1c.jpg' },
+      { name: 'Metallic Zwart', hex: '#16181c', img: 'img/d25520e3862f2bb2032ab288285f6e30.jpg' },
+      { name: 'Champagne', hex: '#d9cfbf', img: 'img/9b86d5dae0fda30eb2a68213cc1f70f3.jpg' },
+      { name: 'Blauw', hex: '#1f3f8f', img: 'img/ef325272c4b23717b78a36145178096a.jpg' }
+    ];
+    var cur = COLORS[s.color];
+    var cura = {
+      img: cur.img, colorName: cur.name, alt: 'Bold Cura in ' + cur.name,
+      colors: COLORS.map(function (c, i) {
+        var sel = i === s.color;
+        return {
+          name: c.name, selected: sel,
+          pick: function () { self.setState({ color: i }); },
+          style: 'width: 48px; height: 48px; border-radius: 50%; padding: 0; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; background: #ffffff; border: ' + (sel ? '3px solid #003070' : '2px solid #c9d3e2'),
+          dot: 'width: 32px; height: 32px; border-radius: 50%; display: block; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15); background: ' + c.hex
+        };
+      })
+    };
+
+    var Q = [
+      { key: 'cover', q: 'Wil je overdekt en warm rijden?', hint: 'Denk aan regen, wind en koude winterdagen.', opts: [['ja', 'Ja, graag overdekt met kachel'], ['nee', 'Nee, open rijden vind ik prima'], ['weet', 'Weet ik nog niet']] },
+      { key: 'pass', q: 'Wil je iemand mee kunnen nemen?', hint: 'Bijvoorbeeld je partner, een kleinkind of een vriend.', opts: [['ja', 'Ja, ik wil een passagier mee kunnen nemen'], ['nee', 'Nee, ik rijd meestal alleen']] },
+      { key: 'dist', q: 'Hoe ver rijd je meestal op een dag?', hint: 'Tel heen en terug bij elkaar op.', opts: [['kort', 'Minder dan 25 km'], ['midden', '25 tot 60 km'], ['ver', 'Meer dan 60 km']] }
+    ];
+    var a = s.a;
+    var kh = { showQ: s.step < 3 && !s.loading, showLoading: !!s.loading, showResult: s.step >= 3 && !s.loading, canBack: s.step > 0 && s.step < 3, num: Math.min(s.step + 1, 3) };
+    kh.wrapStyle = 'transition: opacity 240ms ease, transform 240ms ease; ' + (s.vis === 'leaving' ? 'opacity: 0; transform: translateY(-10px)' : s.vis === 'entering' ? 'opacity: 0; transform: translateY(10px)' : 'opacity: 1; transform: none');
+    kh.back = function () { if (self.busy) return; self.busy = true; self.swap(function () { return { step: Math.max(0, s.step - 1) }; }, function () { self.busy = false; }); };
+    kh.restart = function () { if (self.busy) return; self.busy = true; self.swap(function () { return { step: 0, a: {} }; }, function () { self.busy = false; }); };
+    kh.segments = [0, 1, 2].map(function (i) {
+      return { style: 'display: block; height: 8px; border-radius: 4px; transition: background-color 400ms ease; background: ' + (i <= s.step ? '#ff8036' : '#e3e7ee') };
+    });
+    if (s.step < 3) {
+      var cq = Q[s.step];
+      kh.q = cq.q; kh.hint = cq.hint;
+      kh.opts = cq.opts.map(function (o) {
+        var sel = a[cq.key] === o[0];
+        return {
+          label: o[1], selected: sel,
+          pick: function () {
+            if (self.busy) return;
+            self.busy = true;
+            var na = Object.assign({}, a); na[cq.key] = o[0];
+            var last = s.step === 2;
+            self.setState({ a: na });
+            // Eerst je keuze even laten zien, dan pas door naar de volgende stap.
+            self.later(self.reduce ? 150 : 320, function () {
+              self.swap(function () { return last ? { step: 3, loading: true } : { step: s.step + 1 }; }, function () {
+                if (!last) { self.busy = false; return; }
+                self.later(self.reduce ? 700 : 1400, function () {
+                  self.swap(function () { return { loading: false }; }, function () { self.busy = false; });
+                });
+              });
+            });
+          },
+          style: 'display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; min-height: 68px; padding: 16px 24px; border-radius: 14px; font: 500 19px/1.4 Poppins, sans-serif; text-align: left; cursor: pointer; color: #1a2433; ' + (sel ? 'border: 2px solid #003070; background: #e8eef7' : 'border: 2px solid #c9d3e2; background: #ffffff')
+        };
+      });
+    } else {
+      var isCura = a.cover === 'ja' || a.pass === 'ja';
+      var r = [];
+      if (isCura) {
+        if (a.cover === 'ja') r.push('Je wilt overdekt rijden. De Cura heeft een dichte cabine met kachel.');
+        if (a.pass === 'ja') r.push('Je wilt iemand meenemen. De Cura heeft een passagiersplaats achterin; de Titan heeft één zitplaats.');
+        if (a.dist === 'kort') r.push('Voor korte ritten is de 52 Ah-accu genoeg (± 30 km). Let op: in de winter is het bereik lager.');
+        else r.push('Met de 120 Ah-accu rijd je ± 120 km op één lading. Zo houd je ruim marge.');
+        kh.title = 'Bold Cura';
+        kh.accu = a.dist === 'kort' ? 'met 52 Ah lithium-accu (± 30 km)' : 'met 120 Ah lithium-accu (± 120 km)';
+        kh.price = a.dist === 'kort' ? '€7.090' : '€9.270';
+      } else {
+        if (a.cover === 'nee') r.push('Je rijdt graag open. De Titan is compact en wendbaar.');
+        if (a.cover === 'weet') r.push('Je twijfelt nog over overdekt rijden. Probeer de Cura én de Titan tijdens een gratis proefrit.');
+        r.push('Je rijdt meestal alleen, dus één zitplaats is genoeg.');
+        if (a.dist === 'ver') r.push('Met twee accu’s rijd je tot 120 km. De accu’s laad je binnen op.');
+        else r.push('Eén accu (tot 60 km) is genoeg voor jouw ritten. De accu laad je binnen op.');
+        kh.title = 'Bold Titan';
+        kh.accu = a.dist === 'ver' ? 'met 2 accu’s (tot 120 km)' : 'met 1 accu (tot 60 km)';
+        kh.price = a.dist === 'ver' ? '€3.598' : '€2.699';
+      }
+      kh.isCura = isCura; kh.isTitan = !isCura;
+      kh.offerteHref = isCura ? 'cura.html' : '#keuzehulp';
+      kh.reasons = r.map(function (t) { return { text: t }; });
+    }
+
+    var DEALERS = [
+      ['De Graaf Mobiliteit', 'Amsterdam', 'Nieuwe Hemweg 7C, 1013 BG Amsterdam', '0226-355546', 52.389, 4.873],
+      ['De Graaf Mobiliteit', 'Opmeer', 'De Veken 5, 1716 KE Opmeer', '0226-355546', 52.706, 4.946],
+      ['Motion Mobility', 'Almere', 'Argonweg 125, Almere', '085-2127571', 52.381, 5.236],
+      ['Scootmobiel Specialist Eindhoven', 'Eindhoven', 'Industrieweg 3, 5627 BS Eindhoven', '040-2567700', 51.470, 5.470],
+      ['Scootmobiel Specialist Woerden', 'Woerden', 'Bierbrouwersweg 14, 3449 HW Woerden', '0800-2020', 52.090, 4.890],
+      ['TDM Brommobielen', 'Stadskanaal', 'Veenstraat 22A, 9502 EZ Stadskanaal', '0599-769061', 52.990, 6.950],
+      ['Scootmobielwinkel Haren', 'Haren', 'Felland 7b-1, 9753 TA Haren', '050-3053383', 53.170, 6.600],
+      ['Edescoot', 'Ede', 'Telefoonweg 74, 6713 AL Ede', '06-14133162', 52.040, 5.650],
+      ['Brommobielcenter Limburg', 'Beek', 'Schuttersstraat 27A, 6191 RZ Beek', '06-30111623', 50.940, 5.790],
+      ['Brommobielcenter Limburg', 'Melick', 'Heinsbergerweg 48, 6074 AE Melick', '0475-470471', 51.160, 6.020],
+      ['Mobiliteitswereld', 'Sittard', 'Rijksweg Zuid 212, 6134 AE Sittard', '046-7820552', 50.990, 5.860],
+      ['Autobedrijf Jan Marcellis', 'Oss', 'Margrietlaan 7, 5342 EJ Oss', '0412-626128', 51.760, 5.520],
+      ['Zorgplaza Noord', 'Roden', 'Kanaalstraat 27, 9301 LP Roden', '050-7370340', 53.140, 6.430],
+      ['Autobedrijf Minnaard', 'Kuinre', 'De Schans 27, 8374 KD Kuinre', '0527-231731', 52.790, 5.840],
+      ['EV4you', 'Zwolle', 'Popovstraat 74, 8013 RK Zwolle', '06-36431989', 52.510, 6.090],
+      ['Autobedrijf Ton Wilbrink', 'Apeldoorn', 'De Moestuin 1, 7325 GD Apeldoorn', '055-5403202', 52.210, 5.960],
+      ['Scooby’s Tweewielers', 'Alphen aan den Rijn', 'Zaagmolenweg 10, 2401 LN Alphen aan den Rijn', '0172-260065', 52.130, 4.660]
+    ];
+    var PC = '10:52.37,4.90|11:52.31,4.95|12:52.23,5.17|13:52.37,5.22|14:52.45,4.82|15:52.50,4.80|16:52.65,5.05|17:52.75,4.85|18:52.63,4.75|19:52.46,4.62|20:52.38,4.64|21:52.33,4.60|22:52.20,4.45|23:52.16,4.49|24:52.13,4.66|25:52.07,4.30|26:52.01,4.36|27:52.03,4.50|28:52.01,4.71|29:51.90,4.60|30:51.92,4.48|31:51.90,4.40|32:51.85,4.30|33:51.81,4.67|34:52.05,5.05|35:52.09,5.12|36:52.20,5.00|37:52.10,5.30|38:52.16,5.39|39:52.03,5.55|40:51.88,5.43|41:51.90,5.20|42:51.83,5.00|43:51.50,3.90|44:51.50,3.70|45:51.33,3.80|46:51.50,4.29|47:51.55,4.47|48:51.59,4.78|49:51.65,4.85|50:51.56,5.09|51:51.65,5.05|52:51.69,5.30|53:51.75,5.30|54:51.66,5.62|55:51.40,5.30|56:51.44,5.48|57:51.48,5.65|58:51.50,6.00|59:51.37,6.17|60:51.25,5.75|61:51.00,5.85|62:50.85,5.69|63:50.88,5.95|64:50.88,6.00|65:51.84,5.86|66:51.85,5.75|67:52.04,5.67|68:51.98,5.91|69:51.95,6.10|70:51.97,6.40|71:51.90,6.60|72:52.14,6.20|73:52.21,5.96|74:52.26,6.16|75:52.22,6.89|76:52.35,6.65|77:52.50,6.55|78:52.78,6.90|79:52.70,6.30|80:52.51,6.09|81:52.45,6.30|82:52.52,5.48|83:52.71,5.75|84:52.96,5.92|85:52.95,5.65|86:53.03,5.66|87:52.92,5.42|88:53.10,5.45|89:53.20,5.80|90:53.20,6.20|91:53.30,5.95|92:53.10,6.10|93:53.14,6.43|94:52.99,6.56|95:52.99,6.95|96:53.15,6.75|97:53.21,6.57|98:53.30,6.40|99:53.32,6.85';
+    function nearest(lat, lon) {
+      function km(a1, o1, a2, o2) { var R = 6371, d1 = (a2 - a1) * Math.PI / 180, d2 = (o2 - o1) * Math.PI / 180; var x = Math.sin(d1 / 2) * Math.sin(d1 / 2) + Math.cos(a1 * Math.PI / 180) * Math.cos(a2 * Math.PI / 180) * Math.sin(d2 / 2) * Math.sin(d2 / 2); return 2 * R * Math.asin(Math.sqrt(x)); }
+      return DEALERS.map(function (d) { return { d: d, km: km(lat, lon, d[4], d[5]) }; })
+        .sort(function (x, y) { return x.km - y.km; }).slice(0, 3)
+        .map(function (r) { var d = r.d; return { name: d[0].indexOf(d[1]) > -1 ? d[0] : d[0] + ' ' + d[1], address: d[2], phone: d[3], tel: 'tel:' + d[3].replace(/[^0-9]/g, ''), maps: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(d[0] + ' ' + d[2]), km: Math.max(1, Math.round(r.km)) }; });
+    }
+    var dz = {
+      btnLabel: s.searching ? 'Zoeken…' : 'Zoek dealer', pc: s.pc, msg: s.msg, hasMsg: !!s.msg, results: s.results || [], hasResults: !!(s.results && s.results.length), where: s.where,
+      onPc: function (e) { self.setState({ pc: e.target.value }); },
+      search: function (e) {
+        if (e && e.preventDefault) e.preventDefault();
+        var m = String(self.state.pc).replace(/\s/g, '').match(/^(\d{4})/);
+        if (!m) { self.setState({ msg: 'Vul de 4 cijfers van je postcode in, bijvoorbeeld 8239.', results: null }); return; }
+        var map = {}; PC.split('|').forEach(function (p) { var k = p.split(':'); map[k[0]] = k[1].split(',').map(Number); });
+        var c = map[m[1].slice(0, 2)];
+        if (!c) { self.setState({ msg: 'Deze postcode kennen we niet. Controleer of hij klopt.', results: null }); return; }
+        var res = nearest(c[0], c[1]);
+        self.setState({ msg: '', results: null, searching: true });
+        self.later(800, function () { self.setState({ searching: false, results: res, where: 'postcode ' + m[1] }); });
+      },
+      askLoc: !!s.askLoc,
+      onKey: function (e) { if (e && e.key === 'Enter') { if (e.preventDefault) e.preventDefault(); dz.search(); } },
+      denyLoc: function () { self.setState({ askLoc: false }); var el = document.getElementById('pc'); if (el) el.focus(); },
+      allowLoc: function () { self.setState({ askLoc: false }); dz.realLocate(); },
+      locate: function () { self.setState({ askLoc: true, msg: '' }); },
+      realLocate: function () {
+        if (!navigator.geolocation) { self.setState({ msg: 'Je locatie is niet beschikbaar. Vul je postcode in.' }); return; }
+        navigator.geolocation.getCurrentPosition(
+          function (p) { var res = nearest(p.coords.latitude, p.coords.longitude); self.setState({ msg: '', searching: true }); self.later(800, function () { self.setState({ searching: false, results: res, where: 'jouw locatie' }); }); },
+          function () { self.setState({ msg: 'We konden je locatie niet ophalen. Vul je postcode in.' }); }
+        );
+      }
+    };
+    var TCOLORS = [
+      { name: 'Mat grijs', hex: '#5f6b7a', img: 'img/081933fc3ed3685fc909a7f2a10eccf9.jpg' },
+      { name: 'Mat groen', hex: '#13584f', img: 'img/86d5b37f0b757cbdf6cbc83235108e2e.jpg' },
+      { name: 'Glans rood', hex: '#8e1420', img: 'img/fe46fd75073f8daf51356082d67c5754.jpg' },
+      { name: 'Glans zwart', hex: '#111316', img: 'img/6be7deade845577207168894d7dc1553.jpg' }
+    ];
+    var tcur = TCOLORS[s.tcolor || 0];
+    var titan = {
+      img: tcur.img, colorName: tcur.name, alt: 'Bold Titan in ' + tcur.name + ' met topkoffer',
+      colors: TCOLORS.map(function (c, i) {
+        var sel = i === (s.tcolor || 0);
+        return {
+          name: c.name, selected: sel, pick: function () { self.setState({ tcolor: i }); },
+          style: 'width: 48px; height: 48px; border-radius: 50%; padding: 0; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; background: #ffffff; border: ' + (sel ? '3px solid #003070' : '2px solid #c9d3e2'),
+          dot: 'width: 32px; height: 32px; border-radius: 50%; display: block; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15); background: ' + c.hex
+        };
+      })
+    };
+    var ui = {
+      leaving: !!s.leaving, toastOn: !!s.toast, toastText: s.toast,
+      // Klikken op links: lege links tonen een melding.
+      rootClick: function (e) {
+        var t = e.target, a = t && t.closest ? t.closest('a') : null;
+        if (!a) { if (s.dd && !(t.closest && t.closest('[aria-controls="dd-modellen"], #dd-modellen'))) self.setState({ dd: false }); return; }
+        var h = a.getAttribute('href') || '';
+        if (h === '#') {
+          e.preventDefault();
+          clearTimeout(self.tt); self.setState({ toast: 'Deze pagina ontwerpen we in een volgende ronde.', dd: false });
+          self.tt = setTimeout(function () { self.setState({ toast: '' }); }, 2800);
+          return;
+        }
+        if (h.charAt(0) === '#') { self.setState({ dd: false, menu: false }); return; }
+      }
+    };
+    var nav = {
+      ddOpen: !!s.dd, toggleDd: function () { if (self.hovering) { self.setState({ dd: true }); return; } self.setState({ dd: !self.state.dd }); },
+      hoverOpen: function () { self.hovering = true; clearTimeout(self.ddT); if (!self.state.dd) self.setState({ dd: true }); },
+      hoverClose: function () { self.hovering = false; clearTimeout(self.ddT); self.ddT = setTimeout(function () { self.setState({ dd: false }); }, 250); },
+      subOpen: !!s.sub, toggleSub: function () { self.setState({ sub: !self.state.sub }); },
+      chev: 'transition: transform 200ms ease; transform: rotate(' + ((s.dd || s.sub) ? '180deg' : '0deg') + ')',
+      ddBtn: 'display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 0 16px; border-radius: 10px; border: none; cursor: pointer; font: 500 18px Poppins, sans-serif; color: #1a2433; background: ' + (s.dd ? '#e8eef7' : 'transparent')
+    };
+    var VIDS = [
+      ['ZyeCUeqQFLA', 'Boodschappen doen met de Cura', 'Een rondje rijden en de boodschappen achterin.', 'img/e933d49650d714017f58c153222fdf6b.jpg', '50% 50%', 'none'],
+      ['Oc2TMmz6itQ', 'Door de stad en het park', 'Rustig en zelfstandig op pad.', 'img/057c7afa4986f3cf56d0aa9dc814e8e7.jpg', '50% 65%', 'brightness(1.18) saturate(1.05)']
+    ];
+    var vids = VIDS.map(function (v) {
+      var on = s.vid === v[0];
+      return { title: v[1], desc: v[2], poster: v[3], pos: v[4], filter: v[5], playing: on, notPlaying: !on, label: 'Bekijk de video op YouTube: ' + v[1], url: 'https://www.youtube.com/watch?v=' + v[0],
+        embed: 'https://www.youtube-nocookie.com/embed/' + v[0] + '?autoplay=1&rel=0', play: function () { self.setState({ vid: v[0] }); } };
+    });
+    return { vids: vids, ui: ui, nav: nav, titan: titan, cura: cura, kh: kh, dz: dz };
+  }
+}
+
+DCMount(Component);
+</script>
+</body>
+</html>

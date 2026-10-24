@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bold EV · Contact mobiel</title>
+<script>if(window.innerWidth>=760){location.replace('voorwaarden.html'+location.hash);}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#00214f}
+*{box-sizing:border-box}
+a{color:#003070}a:hover{color:#00214f}
+:focus-visible{outline:3px solid #ff8036;outline-offset:3px}
+@keyframes boldspin{to{transform:rotate(360deg)}}
+@keyframes boldfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes boldtoast{from{opacity:0;transform:translate(-50%,14px)}to{opacity:1;transform:translate(-50%,0)}}
+html{scroll-behavior:smooth}
+a,button{transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .15s ease,filter .2s ease}
+a[style*="border-radius"]:hover,button[style*="border-radius"]:hover{filter:brightness(0.95);box-shadow:0 6px 18px rgba(0,33,79,0.16);transform:translateY(-1px)}
+a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform:translateY(0) scale(0.98);box-shadow:none}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition-duration:1ms !important}[data-fade],[data-fade] *{animation-name:none !important}}
+</style>
+<link rel="icon" href="img/5877295f782f172bdb42c6c44ba08c86.png">
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+
+<div data-fade onClick="{{ ui.rootClick }}" style="width: 390px; font-family: 'Poppins', system-ui, sans-serif; color: #1a2433; font-size: 18px; line-height: 1.6; background: #00214f; animation: boldfade 420ms ease both">
+
+<!-- Actiebalk -->
+<div style="background: #00214f; color: #ffffff; padding: 10px 16px; text-align: center; font-size: 16px; line-height: 1.45">
+<strong style="color: #ff8036; font-weight: 600">Tijdelijk:</strong> topkoffer t.w.v. €150 gratis bij elke Bold Titan. <a href="m-titan.html" style="color: #ffffff; font-weight: 600">Bekijk</a>
+</div>
+
+<!-- Header -->
+<header style="background: #ffffff; border-bottom: 1px solid #e3e7ee; position: sticky; top: 0; z-index: 10">
+<div style="padding: 10px 12px 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 8px">
+<a href="#" aria-label="Bold EV, naar de homepage" style="display: flex; align-items: center; gap: 8px; text-decoration: none">
+<img src="img/5877295f782f172bdb42c6c44ba08c86.png" alt="" style="width: 40px; height: 40px; display: block">
+<img src="img/d0d18112136b88d0c9b4622987239b06.png" alt="Bold" style="height: 20px; width: auto; display: block">
+</a>
+<div style="display: flex; gap: 4px">
+<button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" aria-controls="menu-m" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; width: 64px; height: 58px; border-radius: 12px; border: none; background: #e8eef7; color: #003070; font: 600 14px 'Poppins', sans-serif; cursor: pointer">
+<sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg></sc-if>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></sc-if>
+{{ menuLabel }}</button>
+</div>
+</div>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<nav id="menu-m" aria-label="Hoofdmenu" style="border-top: 1px solid #e3e7ee; padding: 8px 16px 20px; background: #ffffff; animation: boldfade 180ms ease both">
+<button type="button" onClick="{{ nav.toggleSub }}" aria-expanded="{{ nav.subOpen }}" style="display: flex; width: 100%; justify-content: space-between; align-items: center; min-height: 56px; padding: 0; border: none; border-bottom: 1px solid #eef1f5; background: none; font: 500 19px 'Poppins', sans-serif; color: #1a2433; cursor: pointer">Modellen
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="{{ nav.chev }}"><path d="m6 9 6 6 6-6"></path></svg></button>
+<sc-if value="{{ nav.subOpen }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 8px 0; border-bottom: 1px solid #eef1f5; animation: boldfade 180ms ease both">
+<a href="m-cura.html" style="display: flex; gap: 14px; align-items: center; padding: 8px; border-radius: 12px; text-decoration: none"><img src="img/7bbf2f938fc25c9f9567665b24eb4f1c.jpg" alt="" style="width: 84px; height: 58px; object-fit: contain; flex: none"><span><strong style="display: block; color: #003070">Bold Cura</strong><span style="color: #4a5566; font-size: 16px">v.a. <strong style="color: #1a2433">€7.090</strong></span></span></a>
+<a href="m-titan.html" style="display: flex; gap: 14px; align-items: center; padding: 8px; border-radius: 12px; text-decoration: none"><img src="img/081933fc3ed3685fc909a7f2a10eccf9.jpg" alt="" style="width: 84px; height: 58px; object-fit: contain; flex: none"><span><strong style="display: block; color: #003070">Bold Titan</strong><span style="color: #4a5566; font-size: 16px">v.a. <strong style="color: #1a2433">€2.699</strong></span></span></a>
+</div>
+</sc-if>
+<a href="m-proefrit.html" style="display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid #eef1f5; color: #1a2433; font-weight: 500; text-decoration: none; font-size: 19px">Proefrit</a>
+<a href="m-contact.html" style="display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid #eef1f5; color: #1a2433; font-weight: 500; text-decoration: none; font-size: 19px">Contact</a>
+<a href="https://boldev.brincr.com/portal/" style="display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid #eef1f5; color: #1a2433; font-weight: 500; text-decoration: none; font-size: 19px; gap: 8px">Dealer login <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"></path></svg></a>
+</nav>
+</sc-if>
+</header>
+
+<div style="background: #ffffff">
+<!-- Breadcrumb -->
+<nav aria-label="Kruimelpad" style="padding: 16px 16px 0; font-size: 16px; color: #4a5566">
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; flex-wrap: wrap">
+<li><a href="m-index.html" style="color: #003070">Home</a></li>
+<li aria-hidden="true">/</li>
+<li aria-current="page" style="color: #1a2433; font-weight: 500">Algemene voorwaarden</li>
+</ol>
+</nav>
+
+<!-- Kop -->
+<section style="padding: 24px 0 32px">
+<div style="padding: 0 16px">
+<h1 style="margin: 0 0 16px; font-size: 34px; line-height: 1.1; font-weight: 700; color: #003070">Algemene voorwaarden</h1>
+<p style="margin: 0; font-size: 18px; color: #3b4656; max-width: 760px">Algemene Verkoop- en Leveringsvoorwaarden van Bold EV B.V. Deze voorwaarden gelden voor zakelijke afnemers, zoals dealers.</p>
+</div>
+</section>
+
+<!-- Voorwaarden -->
+<section style="padding: 0 16px 56px">
+<article id="art1" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">Artikel 1</span> · Definities</h2>
+<dl style="margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px 24px">
+<dt style="font-weight: 600; color: #1a2433">Bold EV</dt><dd style="margin: 0 0 6px; color: #3b4656">De gebruiker van deze algemene voorwaarden, optredend als importeur en groothandel.</dd>
+<dt style="font-weight: 600; color: #1a2433">Wederpartij</dt><dd style="margin: 0 0 6px; color: #3b4656">De (rechts)persoon (Dealer) die handelt in de uitoefening van beroep of bedrijf en een overeenkomst aangaat met Bold EV.</dd>
+<dt style="font-weight: 600; color: #1a2433">Overeenkomst</dt><dd style="margin: 0 0 6px; color: #3b4656">Iedere afspraak tussen Bold EV en Wederpartij, inclusief bestellingen geplaatst via de Dealerportal.</dd>
+<dt style="font-weight: 600; color: #1a2433">Dealerportal</dt><dd style="margin: 0 0 6px; color: #3b4656">De digitale omgeving waarin Wederpartij bestellingen kan plaatsen en voorraadinformatie kan inzien.</dd>
+</dl>
+</article>
+<article id="art2" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">Artikel 2</span> · Toepasselijkheid</h2>
+<ol style="margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 12px; color: #3b4656">
+<li style="padding-left: 6px">Deze voorwaarden zijn van toepassing op alle aanbiedingen, offertes en overeenkomsten tussen Bold EV en Wederpartij.</li>
+<li style="padding-left: 6px">De toepasselijkheid van eventuele inkoop- of andere voorwaarden van de Wederpartij wordt uitdrukkelijk van de hand gewezen.</li>
+<li style="padding-left: 6px">Indien er naast deze voorwaarden ook specifieke Dealervoorwaarden zijn overeengekomen, prevaleren bij tegenstrijdigheid de bepalingen uit de specifieke Dealerovereenkomst.</li>
+</ol>
+</article>
+<article id="art3" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">Artikel 3</span> · Aanbod en Totstandkoming</h2>
+<ol style="margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 12px; color: #3b4656">
+<li style="padding-left: 6px">Alle aanbiedingen in de Dealerportal zijn vrijblijvend, tenzij uitdrukkelijk anders vermeld.</li>
+<li style="padding-left: 6px">De overeenkomst komt tot stand op het moment dat Bold EV de bestelling schriftelijk (waaronder per e-mail) heeft bevestigd, dan wel door daadwerkelijke uitvoering van de levering.</li>
+<li style="padding-left: 6px">Afbeeldingen en specificaties in de Dealerportal zijn indicatief. Geringe afwijkingen geven de Wederpartij geen recht op ontbinding of schadevergoeding.</li>
+</ol>
+</article>
+<article id="art4" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">Artikel 4</span> · Prijzen en Betaling</h2>
+<ol style="margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 12px; color: #3b4656">
+<li style="padding-left: 6px">Prijzen zijn exclusief btw, transport- en verpakkingskosten, tenzij anders overeengekomen.</li>
+<li style="padding-left: 6px">Betaling dient te geschieden binnen 14 dagen na factuurdatum. Deze termijn is een fatale termijn.</li>
+<li style="padding-left: 6px">Bij overschrijding van de betalingstermijn is de Wederpartij van rechtswege in verzuim. Vanaf dat moment is de wettelijke handelsrente verschuldigd.</li>
+<li style="padding-left: 6px">Bold EV zal bij uitblijven van betaling maximaal twee betalingsherinneringen sturen. Indien betaling hierna uitblijft, wordt de vordering ter incasso overgedragen.</li>
+<li style="padding-left: 6px">Alle buitengerechtelijke incassokosten komen voor rekening van de Wederpartij en worden vastgesteld op ten minste 15% van het factuurbedrag.</li>
+</ol>
+</article>
+<article id="art5" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">Artikel 5</span> · Levering en Levertijd</h2>
+<ol style="margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 12px; color: #3b4656">
+<li style="padding-left: 6px">Opgegeven levertijden in de Dealerportal zijn indicatief en gelden nimmer als fatale termijn. Vertraging in de levering door de fabrikant of importeur geldt als overmacht.</li>
+<li style="padding-left: 6px">Levering geschiedt DAP (Delivered At Place) op het adres van de Wederpartij, tenzij anders overeengekomen.</li>
+<li style="padding-left: 6px">Transportkosten voor voertuigen en verzendkosten voor pakketten worden bij de Wederpartij in rekening gebracht.</li>
+<li style="padding-left: 6px">Het risico van verlies of beschadiging van de producten gaat over op de Wederpartij op het moment dat de goederen op het afleveradres zijn aangekomen.</li>
+</ol>
+</article>
+<article id="art6" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">Artikel 6</span> · Onderzoeksplicht en Reclame</h2>
+<ol style="margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 12px; color: #3b4656">
+<li style="padding-left: 6px">De Wederpartij dient de geleverde zaken direct bij aankomst te controleren op zichtbare schade en aantallen.</li>
+<li style="padding-left: 6px">Zichtbare gebreken of transportschade dienen binnen 48 uur na levering schriftelijk (met foto&#x27;s) bij Bold EV gemeld te worden. Na deze termijn wordt de levering als goedgekeurd beschouwd.</li>
+<li style="padding-left: 6px">Niet-zichtbare gebreken dienen binnen 5 werkdagen na ontdekking schriftelijk te worden gemeld.</li>
+<li style="padding-left: 6px">Reclames schorten de betalingsverplichting van de Wederpartij niet op.</li>
+</ol>
+</article>
+<article id="art7" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">Artikel 7</span> · Garantie</h2>
+<ol style="margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 12px; color: #3b4656">
+<li style="padding-left: 6px">Bold EV verleent op geleverde voertuigen de volgende garantie:<ul style="margin: 10px 0 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px"><li><strong style="color: #1a2433">Bold Cura:</strong> 2 jaar op het functioneren van de motor en dragende delen, en 6 maanden op aan slijtage onderhevige onderdelen.</li><li><strong style="color: #1a2433">Bold Titan:</strong> 2 jaar op motor, controller, accu en dragende delen, 1 jaar op de overige onderdelen, en 3 maanden op aan slijtage onderhevige onderdelen.</li></ul></li>
+<li style="padding-left: 6px">De in lid 1 genoemde garantietermijnen gelden, tenzij schriftelijk anders bepaald.</li>
+<li style="padding-left: 6px"><strong style="color: #1a2433">Onderhoudsverplichting.</strong> Aanspraak op garantie bestaat uitsluitend indien het voertuig conform de voorschriften van de fabrikant wordt onderhouden, waarbij ten minste elke 2.000 kilometer een onderhoudsbeurt dient te worden uitgevoerd door een daartoe gekwalificeerde technicus. De uitgevoerde onderhoudsbeurten dienen aantoonbaar te zijn door middel van een ingevuld onderhoudsboekje en/of onderhoudsfacturen. Indien het voorgeschreven onderhoud niet, niet tijdig of niet aantoonbaar is uitgevoerd, vervalt iedere aanspraak op garantie.</li>
+<li style="padding-left: 6px"><strong style="color: #1a2433">De fabrieksgarantie is niet overdraagbaar.</strong> De door de fabrikant en/of Bold EV verstrekte garantie geldt uitsluitend jegens de Wederpartij als eerste afnemer en kan niet worden overgedragen aan derden, waaronder begrepen eindgebruikers en opvolgende eigenaren. Bij doorverkoop of overdracht van het voertuig vervalt de aanspraak op fabrieksgarantie jegens Bold EV. Een eventuele garantie die de Wederpartij zelf aan haar afnemers verstrekt, komt volledig voor rekening en risico van de Wederpartij.</li>
+<li style="padding-left: 6px">De garantie vervalt onmiddellijk indien:<ul style="margin: 10px 0 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px"><li>Er sprake is van normale slijtage of onjuist gebruik.</li><li>De Wederpartij of derden reparaties hebben verricht zonder toestemming.</li><li>De snelheidsbegrenzer is aangepast (opvoeren).</li><li>Er niet-originele onderdelen zijn gebruikt.</li><li>Het voorgeschreven onderhoud als bedoeld in lid 3 niet is uitgevoerd of niet kan worden aangetoond.</li></ul></li>
+<li style="padding-left: 6px">Garantiewerkzaamheden worden in principe uitgevoerd door het toezenden van vervangende onderdelen. Arbeidsloon en voorrijkosten zijn voor rekening van de Wederpartij, tenzij anders overeengekomen.</li>
+</ol>
+</article>
+<article id="art8" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">Artikel 8</span> · Retournering en Annulering</h2>
+<ol style="margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 12px; color: #3b4656">
+<li style="padding-left: 6px">Aangezien de overeenkomst B2B betreft, is tussentijdse annulering of retournering van correct geleverde producten niet mogelijk.</li>
+<li style="padding-left: 6px">Slechts in uitzonderlijke gevallen en na schriftelijke goedkeuring van Bold EV kunnen goederen retour worden genomen.</li>
+<li style="padding-left: 6px">Annulering wegens overschrijding van de levertijd is enkel mogelijk indien Bold EV dusdanig tekortschiet dat nakoming redelijkerwijs niet meer gevergd kan worden en Bold EV schriftelijk in gebreke is gesteld.</li>
+</ol>
+</article>
+<article id="art9" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">Artikel 9</span> · Eigendomsvoorbehoud</h2>
+<ol style="margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 12px; color: #3b4656">
+<li style="padding-left: 6px">Alle door Bold EV geleverde zaken blijven eigendom van Bold EV totdat de Wederpartij aan al zijn betalingsverplichtingen uit alle overeenkomsten heeft voldaan.</li>
+<li style="padding-left: 6px">Het is de Wederpartij toegestaan de onder eigendomsvoorbehoud geleverde zaken in het kader van zijn normale bedrijfsuitoefening door te verkopen.</li>
+<li style="padding-left: 6px">Indien de Wederpartij in gebreke blijft met betaling, is Bold EV gerechtigd de geleverde zaken zonder rechterlijke tussenkomst terug te nemen. De Wederpartij verleent Bold EV bij voorbaat toestemming om de locaties te betreden waar de zaken zich bevinden.</li>
+</ol>
+</article>
+<article id="art10" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">Artikel 10</span> · Aansprakelijkheid</h2>
+<ol style="margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 12px; color: #3b4656">
+<li style="padding-left: 6px">De aansprakelijkheid van Bold EV is beperkt tot de nakoming van de garantieverplichtingen zoals omschreven in Artikel 7.</li>
+<li style="padding-left: 6px">Bold EV is nimmer aansprakelijk voor indirecte schade, waaronder begrepen gevolgschade, gederfde winst, gemiste besparingen en schade door bedrijfsstagnatie.</li>
+<li style="padding-left: 6px">De aansprakelijkheid is in alle gevallen beperkt tot het bedrag van de factuurwaarde van de betreffende levering, dan wel tot het bedrag dat door de bedrijfsaansprakelijkheidsverzekering van Bold EV wordt uitgekeerd.</li>
+<li style="padding-left: 6px">Bold EV is niet aansprakelijk voor schade als gevolg van door de overheid gewijzigde regelgeving (bijv. RDW/kentekenregels).</li>
+</ol>
+</article>
+<article id="art11" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">Artikel 11</span> · Toepasselijk recht en geschillen</h2>
+<ol style="margin: 0; padding-left: 28px; display: flex; flex-direction: column; gap: 12px; color: #3b4656">
+<li style="padding-left: 6px">Op alle rechtsbetrekkingen is uitsluitend Nederlands recht van toepassing.</li>
+<li style="padding-left: 6px">Geschillen worden voorgelegd aan de bevoegde rechter in het arrondissement waar Bold EV is gevestigd.</li>
+</ol>
+</article>
+<p style="margin: 8px 0 0; padding-top: 20px; border-top: 1px solid #e3e7ee; color: #4a5566; font-size: 16px">Vragen over deze voorwaarden? Bel <a href="tel:+31850805282" style="color: #003070; font-weight: 600">085 080 52 82</a>.</p>
+</section>
+
+<!-- Footer -->
+<footer id="contact" style="background: #00214f; color: #d6e0ef; padding: 56px 16px 40px; font-size: 17px">
+<img src="img/d0d18112136b88d0c9b4622987239b06.png" alt="Bold" style="height: 24px; width: auto; display: block; margin-bottom: 16px">
+<p style="margin: 0 0 4px">Bold EV · Artemisweg 260, 8239 DE Lelystad</p>
+<p style="margin: 0 0 24px; font-size: 16px">Bezoek op afspraak</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 32px">
+<a href="tel:+31850805282" style="display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 12px; border: 2px solid #3a5a8c; color: #ffffff; font-weight: 600; text-decoration: none">Bellen</a>
+<a href="https://wa.me/31683801610" style="display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 12px; border: 2px solid #3a5a8c; color: #ffffff; font-weight: 600; text-decoration: none">WhatsApp</a>
+</div>
+<p style="margin: 0 0 8px; color: #ffffff; font-weight: 600">Particulier</p>
+<div style="display: flex; flex-direction: column; margin-bottom: 24px">
+<a href="#" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">Bold Cura</a>
+<a href="m-titan.html" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">Bold Titan</a>
+<a href="mailto:info@boldev.nl" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">info@boldev.nl</a>
+</div>
+<p style="margin: 0 0 8px; color: #ffffff; font-weight: 600">Zakelijk</p>
+<div style="display: flex; flex-direction: column; margin-bottom: 32px">
+<a href="m-dealer-worden.html" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">Dealer worden</a>
+<a href="https://boldev.brincr.com/portal/" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">Dealer login</a>
+</div>
+<div style="padding-top: 20px; border-top: 1px solid #1f3d6b; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px">
+<span>© 2026 Bold EV</span>
+<a href="m-privacy.html" style="color: #d6e0ef">Privacyverklaring</a>
+<a href="m-voorwaarden.html" style="color: #d6e0ef">Algemene voorwaarden</a>
+</div>
+</footer>
+<sc-if value="{{ ui.leaving }}" hint-placeholder-val="{{ false }}">
+<div aria-live="polite" style="position: fixed; inset: 0; z-index: 80; background: rgba(255, 255, 255, 0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; animation: boldfade 220ms ease both">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 50%; border: 5px solid #e3e7ee; border-top-color: #ff8036; animation: boldspin 900ms linear infinite; display: block"></span>
+<p style="margin: 0; font-weight: 600; color: #003070">Even geduld…</p>
+</div>
+</sc-if>
+<sc-if value="{{ ui.toastOn }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="position: fixed; left: 50%; bottom: 32px; z-index: 90; width: max-content; max-width: calc(100% - 32px); background: #00214f; color: #ffffff; padding: 16px 24px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); font-weight: 500; text-align: center; animation: boldtoast 300ms ease both">{{ ui.toastText }}</div>
+</sc-if>
+</div>
+</template>
+<script src="assets/dc.js"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { dd: false, sub: false, toast: '', leaving: false, searching: false, sending: false, menu: false, vis: 'shown', f: { naam: '', mail: '', tel: '' }, msg: '', topic: '', pref: 'bellen', tried: false, sent: false };
+  }
+  componentDidMount() {
+    try { this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { this.reduce = false; }
+  }
+  componentWillUnmount() { (this.timers || []).forEach(clearTimeout); }
+  later(ms, fn) { this.timers = this.timers || []; this.timers.push(setTimeout(fn, ms)); }
+  // Laat de huidige inhoud wegfaden, past de state aan en fade de nieuwe inhoud in.
+  swap(changes, done) {
+    var self = this;
+    if (this.reduce) { this.setState(changes()); if (done) done(); return; }
+    this.setState({ vis: 'leaving' });
+    this.later(240, function () {
+      var ch = changes(); ch.vis = 'entering'; self.setState(ch);
+      self.later(30, function () { self.setState({ vis: 'shown' }); self.later(260, function () { if (done) done(); }); });
+    });
+  }
+  renderVals() {
+    var self = this, s = this.state;
+    // Contactformulier
+    function opt(sel, center) {
+      return 'display: block; width: 100%; text-align: ' + (center ? 'center' : 'left') + '; padding: 16px 18px; border-radius: 8px; cursor: pointer; font: 500 17px/1.35 Poppins, sans-serif; color: #1a2433; ' + (sel ? 'border: 3px solid #003070; background: #e8eef7' : 'border: 2px solid #c9d3e2; background: #ffffff');
+    }
+    function inputStyle(err) { return 'min-height: 58px; padding: 0 18px; border-radius: 8px; font: 400 18px Poppins, sans-serif; color: #1a2433; background: #ffffff; width: 100%; border: ' + (err ? '2px solid #b42318' : '2px solid #8a96a8'); }
+    var F = s.f;
+    var DEF = [
+      ['naam', 'Naam', 'text', 'name', function (v) { return v.trim().length > 1 ? '' : 'Vul je naam in.'; }, false],
+      ['tel', 'Telefoonnummer', 'tel', 'tel', function (v) { return v.replace(/\D/g, '').length >= 10 ? '' : 'Vul een telefoonnummer van 10 cijfers in.'; }, false],
+      ['mail', 'E-mailadres', 'email', 'email', function (v) { return /^\S+@\S+\.\S+$/.test(v.trim()) ? '' : 'Vul een geldig e-mailadres in.'; }, true]
+    ];
+    var errs = {}, nErr = 0;
+    DEF.forEach(function (d) { var e = d[4](F[d[0]] || ''); errs[d[0]] = e; if (e) nErr++; });
+    var msgBad = (s.msg || '').trim().length < 5; if (msgBad) nErr++;
+    if (!s.topic) nErr++;
+    var TOPICS = [
+      ['model', 'Een model', 'Cura, Titan, prijzen of opties'],
+      ['vergoeding', 'Vergoeding of betalen', 'WMO, PGB of gespreid betalen'],
+      ['service', 'Service of garantie', 'Onderhoud, reparatie of onderdelen'],
+      ['anders', 'Iets anders', 'Elke vraag is welkom']
+    ];
+    var PH = { model: 'Bijvoorbeeld: past mijn rollator in de Cura?', vergoeding: 'Bijvoorbeeld: hoe vraag ik vergoeding aan bij mijn gemeente?', service: 'Bijvoorbeeld: mijn accu laadt niet meer goed op.', anders: 'Typ hier je vraag.' };
+    var ct = {
+      wrapStyle: 'transition: opacity 240ms ease, transform 240ms ease; ' + (s.vis === 'leaving' ? 'opacity: 0; transform: translateY(-10px)' : s.vis === 'entering' ? 'opacity: 0; transform: translateY(10px)' : 'opacity: 1; transform: none'),
+      notSent: !s.sent, sent: s.sent,
+      topics: TOPICS.map(function (t) {
+        return { title: t[1], desc: t[2], selected: s.topic === t[0], style: opt(s.topic === t[0]), pick: function () { self.setState({ topic: t[0] }); } };
+      }),
+      isService: s.topic === 'service', errTopic: s.tried && !s.topic,
+      placeholder: PH[s.topic] || 'Typ hier je vraag.',
+      fields: DEF.map(function (d) {
+        var showErr = s.tried && !!errs[d[0]];
+        return {
+          id: 'ct-' + d[0], label: d[1], type: d[2], ac: d[3], value: F[d[0]], hasErr: showErr, err: errs[d[0]],
+          wrap: 'display: flex; flex-direction: column; gap: 8px; ' + (d[5] ? 'grid-column: 1 / -1' : ''),
+          onChange: function (e) { var nf = Object.assign({}, self.state.f); nf[d[0]] = e.target.value; self.setState({ f: nf }); },
+          style: inputStyle(showErr)
+        };
+      }),
+      msg: s.msg, onMsg: function (e) { self.setState({ msg: e.target.value }); },
+      msgErr: s.tried && msgBad,
+      msgStyle: 'display: block; width: 100%; padding: 16px 18px; border-radius: 8px; font: 400 18px/1.5 Poppins, sans-serif; color: #1a2433; resize: vertical; border: ' + (s.tried && msgBad ? '2px solid #b42318' : '2px solid #8a96a8'),
+      submitLabel: s.sending ? 'Bezig met versturen…' : 'Verstuur je vraag',
+      thanks: s.topic === 'service' ? 'We kijken met je mee en zetten je vraag zo nodig door naar je dealer. Je hoort binnen 24 uur van ons.' : 'We nemen zo snel mogelijk contact met je op.',
+      firstName: (F.naam || '').trim().split(' ')[0] || '',
+      submit: function (e) {
+        if (e && e.preventDefault) e.preventDefault();
+        if (self.state.sending) return;
+        if (nErr > 0) { self.setState({ tried: true }); return; }
+        self.setState({ sending: true, tried: false });
+        self.later(1100, function () { self.swap(function () { return { sending: false, sent: true }; }); });
+      },
+      reset: function () { self.swap(function () { return { sent: false, msg: '', topic: '' }; }); }
+    };
+
+    var ui = {
+      leaving: !!s.leaving, toastOn: !!s.toast, toastText: s.toast,
+      // Klikken op links: lege links tonen een melding.
+      rootClick: function (e) {
+        var t = e.target, a = t && t.closest ? t.closest('a') : null;
+        if (!a) { if (s.dd && !(t.closest && t.closest('[aria-controls="dd-modellen"], #dd-modellen'))) self.setState({ dd: false }); return; }
+        var h = a.getAttribute('href') || '';
+        if (h === '#') {
+          e.preventDefault();
+          clearTimeout(self.tt); self.setState({ toast: 'Deze pagina ontwerpen we in een volgende ronde.', dd: false });
+          self.tt = setTimeout(function () { self.setState({ toast: '' }); }, 2800);
+          return;
+        }
+        if (h.charAt(0) === '#') { self.setState({ dd: false, menu: false }); return; }
+      }
+    };
+    var nav = {
+      ddOpen: !!s.dd, toggleDd: function () { self.setState({ dd: !self.state.dd }); },
+      subOpen: !!s.sub, toggleSub: function () { self.setState({ sub: !self.state.sub }); },
+      chev: 'transition: transform 200ms ease; transform: rotate(' + ((s.dd || s.sub) ? '180deg' : '0deg') + ')',
+      ddBtn: 'display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 0 16px; border-radius: 10px; border: none; cursor: pointer; font: 500 18px Poppins, sans-serif; color: #1a2433; background: ' + (s.dd ? '#e8eef7' : 'transparent')
+    };
+    return { ui: ui, nav: nav, ct: ct, menuOpen: s.menu, menuClosed: !s.menu, menuLabel: s.menu ? 'Sluit' : 'Menu', toggleMenu: function () { self.setState({ menu: !self.state.menu }); } };
+  }
+}
+
+DCMount(Component);
+</script>
+</body>
+</html>

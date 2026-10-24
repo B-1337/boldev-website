@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bold EV · Contact mobiel</title>
+<script>if(window.innerWidth>=760){location.replace('privacy.html'+location.hash);}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#00214f}
+*{box-sizing:border-box}
+a{color:#003070}a:hover{color:#00214f}
+:focus-visible{outline:3px solid #ff8036;outline-offset:3px}
+@keyframes boldspin{to{transform:rotate(360deg)}}
+@keyframes boldfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes boldtoast{from{opacity:0;transform:translate(-50%,14px)}to{opacity:1;transform:translate(-50%,0)}}
+html{scroll-behavior:smooth}
+a,button{transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .15s ease,filter .2s ease}
+a[style*="border-radius"]:hover,button[style*="border-radius"]:hover{filter:brightness(0.95);box-shadow:0 6px 18px rgba(0,33,79,0.16);transform:translateY(-1px)}
+a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform:translateY(0) scale(0.98);box-shadow:none}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition-duration:1ms !important}[data-fade],[data-fade] *{animation-name:none !important}}
+</style>
+<link rel="icon" href="img/5877295f782f172bdb42c6c44ba08c86.png">
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+
+<div data-fade onClick="{{ ui.rootClick }}" style="width: 390px; font-family: 'Poppins', system-ui, sans-serif; color: #1a2433; font-size: 18px; line-height: 1.6; background: #00214f; animation: boldfade 420ms ease both">
+
+<!-- Actiebalk -->
+<div style="background: #00214f; color: #ffffff; padding: 10px 16px; text-align: center; font-size: 16px; line-height: 1.45">
+<strong style="color: #ff8036; font-weight: 600">Tijdelijk:</strong> topkoffer t.w.v. €150 gratis bij elke Bold Titan. <a href="m-titan.html" style="color: #ffffff; font-weight: 600">Bekijk</a>
+</div>
+
+<!-- Header -->
+<header style="background: #ffffff; border-bottom: 1px solid #e3e7ee; position: sticky; top: 0; z-index: 10">
+<div style="padding: 10px 12px 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 8px">
+<a href="#" aria-label="Bold EV, naar de homepage" style="display: flex; align-items: center; gap: 8px; text-decoration: none">
+<img src="img/5877295f782f172bdb42c6c44ba08c86.png" alt="" style="width: 40px; height: 40px; display: block">
+<img src="img/d0d18112136b88d0c9b4622987239b06.png" alt="Bold" style="height: 20px; width: auto; display: block">
+</a>
+<div style="display: flex; gap: 4px">
+<button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" aria-controls="menu-m" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; width: 64px; height: 58px; border-radius: 12px; border: none; background: #e8eef7; color: #003070; font: 600 14px 'Poppins', sans-serif; cursor: pointer">
+<sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg></sc-if>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></sc-if>
+{{ menuLabel }}</button>
+</div>
+</div>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<nav id="menu-m" aria-label="Hoofdmenu" style="border-top: 1px solid #e3e7ee; padding: 8px 16px 20px; background: #ffffff; animation: boldfade 180ms ease both">
+<button type="button" onClick="{{ nav.toggleSub }}" aria-expanded="{{ nav.subOpen }}" style="display: flex; width: 100%; justify-content: space-between; align-items: center; min-height: 56px; padding: 0; border: none; border-bottom: 1px solid #eef1f5; background: none; font: 500 19px 'Poppins', sans-serif; color: #1a2433; cursor: pointer">Modellen
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="{{ nav.chev }}"><path d="m6 9 6 6 6-6"></path></svg></button>
+<sc-if value="{{ nav.subOpen }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 8px 0; border-bottom: 1px solid #eef1f5; animation: boldfade 180ms ease both">
+<a href="m-cura.html" style="display: flex; gap: 14px; align-items: center; padding: 8px; border-radius: 12px; text-decoration: none"><img src="img/7bbf2f938fc25c9f9567665b24eb4f1c.jpg" alt="" style="width: 84px; height: 58px; object-fit: contain; flex: none"><span><strong style="display: block; color: #003070">Bold Cura</strong><span style="color: #4a5566; font-size: 16px">v.a. <strong style="color: #1a2433">€7.090</strong></span></span></a>
+<a href="m-titan.html" style="display: flex; gap: 14px; align-items: center; padding: 8px; border-radius: 12px; text-decoration: none"><img src="img/081933fc3ed3685fc909a7f2a10eccf9.jpg" alt="" style="width: 84px; height: 58px; object-fit: contain; flex: none"><span><strong style="display: block; color: #003070">Bold Titan</strong><span style="color: #4a5566; font-size: 16px">v.a. <strong style="color: #1a2433">€2.699</strong></span></span></a>
+</div>
+</sc-if>
+<a href="m-proefrit.html" style="display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid #eef1f5; color: #1a2433; font-weight: 500; text-decoration: none; font-size: 19px">Proefrit</a>
+<a href="m-contact.html" style="display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid #eef1f5; color: #1a2433; font-weight: 500; text-decoration: none; font-size: 19px">Contact</a>
+<a href="https://boldev.brincr.com/portal/" style="display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid #eef1f5; color: #1a2433; font-weight: 500; text-decoration: none; font-size: 19px; gap: 8px">Dealer login <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"></path></svg></a>
+</nav>
+</sc-if>
+</header>
+
+<div style="background: #ffffff">
+<!-- Breadcrumb -->
+<nav aria-label="Kruimelpad" style="padding: 16px 16px 0; font-size: 16px; color: #4a5566">
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; flex-wrap: wrap">
+<li><a href="m-index.html" style="color: #003070">Home</a></li>
+<li aria-hidden="true">/</li>
+<li aria-current="page" style="color: #1a2433; font-weight: 500">Privacyverklaring</li>
+</ol>
+</nav>
+
+<!-- Kop -->
+<section style="padding: 24px 0 32px">
+<div style="padding: 0 16px">
+<h1 style="margin: 0 0 16px; font-size: 34px; line-height: 1.1; font-weight: 700; color: #003070">Privacyverklaring</h1>
+<p style="margin: 0; font-size: 18px; color: #3b4656; max-width: 760px">Hoe Bold EV omgaat met persoonsgegevens. Versie 2025.</p>
+</div>
+</section>
+
+<!-- Voorwaarden -->
+<section style="padding: 0 16px 56px">
+<article id="art1" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">1.</span> Inleiding en Verantwoordelijke</h2>
+<p style="margin: 0 0 14px; color: #3b4656">Dit is de Privacyverklaring van Bold EV. Wij zijn verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze verklaring. Bold EV respecteert de privacy van haar zakelijke relaties (dealers) en gebruikers van het dealerportal. Wij dragen er zorg voor dat de persoonlijke informatie die u ons verschaft vertrouwelijk wordt behandeld.</p>
+<div style="margin: 4px 0 14px; padding: 20px 24px; border-radius: 8px; background: #f7f5f1; color: #1a2433"><strong style="display: block; margin-bottom: 4px">Contactgegevens</strong>Bold EV<br>Artemisweg 260<br>8239 DE Lelystad<br>KvK: 98904272<br>E-mail: <a href="mailto:info@boldev.nl" style="color: #003070; font-weight: 600">info@boldev.nl</a></div>
+</article>
+<article id="art2" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">2.</span> Persoonsgegevens die wij verwerken</h2>
+<p style="margin: 0 0 14px; color: #3b4656">Bold EV verwerkt uw persoonsgegevens doordat u gebruik maakt van onze diensten (Dealerportal), omdat u dealer bent bij ons, en/of omdat u deze gegevens zelf aan ons verstrekt. Omdat wij B2B (Business-to-Business) werken, betreft dit voornamelijk zakelijke gegevens die herleidbaar kunnen zijn tot personen.</p>
+<p style="margin: 0 0 14px; color: #3b4656">Hieronder vindt u een overzicht van de persoonsgegevens die wij verwerken:</p>
+<ul style="margin: 0 0 14px; padding-left: 24px; display: flex; flex-direction: column; gap: 6px; color: #3b4656"><li>Bedrijfsnaam en KvK-gegevens.</li><li>Voor- en achternaam van contactperso(o)n(en).</li><li>Adresgegevens (vestigingsadres en afleveradres).</li><li>Telefoonnummer (zakelijk en/of mobiel).</li><li>E-mailadres.</li><li>Financiële gegevens (Bankrekeningnummer, BTW-nummer).</li><li>Gegevens over uw activiteiten op ons dealerportal (bijv. bestelhistorie).</li></ul>
+</article>
+<article id="art3" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">3.</span> Met welk doel en op basis van welke grondslag wij gegevens verwerken</h2>
+<p style="margin: 0 0 14px; color: #3b4656">Bold EV verwerkt uw gegevens voor de volgende doelen:</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Uitvoering van de overeenkomst.</strong> Om u toegang te geven tot het dealerportal, uw bestellingen te verwerken, en goederen (scootmobielen/voertuigen) bij u of uw klant af te leveren (DAP).</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Financiële afhandeling.</strong> Het versturen van facturen en het afhandelen van betalingen.</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Service en Contact.</strong> Om u te kunnen bellen of e-mailen indien dit nodig is voor onze dienstverlening, garantiekwesties of terugroepacties.</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Wettelijke verplichting.</strong> Bold EV verwerkt ook persoonsgegevens als wij hier wettelijk toe verplicht zijn, zoals gegevens die wij nodig hebben voor onze belastingaangifte.</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Marketing (Gerechtvaardigd belang).</strong> Om u te informeren over wijzigingen van onze diensten, nieuwe modellen en producten via onze nieuwsbrief (u kunt zich hier altijd voor afmelden).</p>
+</article>
+<article id="art4" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">4.</span> Geautomatiseerde besluitvorming</h2>
+<p style="margin: 0 0 14px; color: #3b4656">Bold EV neemt niet op basis van geautomatiseerde verwerkingen besluiten over zaken die (aanzienlijke) gevolgen kunnen hebben voor personen. Het gaat hier om besluiten die worden genomen door computerprogramma&#x27;s of -systemen, zonder dat daar een mens tussen zit.</p>
+</article>
+<article id="art5" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">5.</span> Hoe lang we persoonsgegevens bewaren</h2>
+<p style="margin: 0 0 14px; color: #3b4656">Bold EV bewaart uw persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor uw gegevens worden verzameld. Wij hanteren de volgende bewaartermijnen:</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Klantgegevens en Orderhistorie.</strong> Zeven jaar na het laatste boekjaar, omdat wij hiertoe wettelijk verplicht zijn door de Belastingdienst (fiscale bewaarplicht).</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Accountgegevens Dealerportal.</strong> Zolang u een actieve dealerovereenkomst heeft met Bold EV. Bij beëindiging van de samenwerking worden accountgegevens binnen 1 jaar verwijderd of geanonimiseerd, tenzij er nog openstaande financiële verplichtingen zijn.</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Prospects.</strong> Gegevens van potentiële dealers verwijderen wij uiterlijk 2 jaar na het laatste contact indien er geen overeenkomst tot stand is gekomen.</p>
+</article>
+<article id="art6" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">6.</span> Delen van persoonsgegevens met derden</h2>
+<p style="margin: 0 0 14px; color: #3b4656">Bold EV verkoopt uw gegevens niet aan derden en verstrekt deze uitsluitend indien dit nodig is voor de uitvoering van onze overeenkomst met u of om te voldoen aan een wettelijke verplichting.</p>
+<p style="margin: 0 0 14px; color: #3b4656">Wij delen gegevens met de volgende partijen:</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Transporteurs.</strong> Voor het afleveren van de voertuigen en onderdelen.</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">IT-dienstverleners.</strong> Voor het hosten en onderhouden van het dealerportal en onze e-mailservers.</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Financiële dienstverleners.</strong> Onze accountant en bank voor de administratieve afhandeling.</p>
+<p style="margin: 0 0 14px; color: #3b4656">Met bedrijven die uw gegevens verwerken in onze opdracht, sluiten wij een verwerkersovereenkomst om te zorgen voor eenzelfde niveau van beveiliging en vertrouwelijkheid van uw gegevens. Bold EV blijft verantwoordelijk voor deze verwerkingen.</p>
+</article>
+<article id="art7" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">7.</span> Cookies, of vergelijkbare technieken</h2>
+<p style="margin: 0 0 14px; color: #3b4656">Bold EV gebruikt op het dealerportal functionele en analytische cookies. Een cookie is een klein tekstbestand dat bij het eerste bezoek aan deze website wordt opgeslagen in de browser van uw computer, tablet of smartphone.</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Functionele cookies.</strong> Deze zorgen ervoor dat het dealerportal naar behoren werkt en dat bijvoorbeeld uw inlogstatus en winkelwageninhoud onthouden worden.</p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Analytische cookies.</strong> Wij gebruiken analytische cookies (zoals Google Analytics) om het gebruik van het portal te meten en te verbeteren. Deze gegevens zijn zo veel mogelijk geanonimiseerd en niet te herleiden naar individuele personen.</p>
+<p style="margin: 0 0 14px; color: #3b4656">Bij uw eerste bezoek aan onze website informeren wij u over deze cookies. U kunt zich afmelden voor cookies door uw internetbrowser zo in te stellen dat deze geen cookies meer opslaat.</p>
+</article>
+<article id="art8" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">8.</span> Gegevens inzien, aanpassen of verwijderen</h2>
+<p style="margin: 0 0 14px; color: #3b4656">U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of te verwijderen. Omdat u een account heeft in het dealerportal, kunt u het grootste deel van uw gegevens zelf inzien en beheren.</p>
+<p style="margin: 0 0 14px; color: #3b4656">Daarnaast heeft u het recht om:</p>
+<ul style="margin: 0 0 14px; padding-left: 24px; display: flex; flex-direction: column; gap: 6px; color: #3b4656"><li>Uw eventuele toestemming voor de gegevensverwerking in te trekken.</li><li>Bezwaar te maken tegen de verwerking van uw persoonsgegevens door Bold EV.</li><li>Gegevensoverdraagbaarheid (dataportabiliteit).</li></ul>
+<p style="margin: 0 0 14px; color: #3b4656">U kunt een verzoek tot inzage, correctie, verwijdering of gegevensoverdraging sturen naar <a href="mailto:info@boldev.nl" style="color: #003070; font-weight: 600">info@boldev.nl</a></p>
+<p style="margin: 0 0 14px; padding-left: 18px; border-left: 3px solid #ff8036; color: #3b4656"><strong style="color: #1a2433">Identificatie.</strong> Om er zeker van te zijn dat het verzoek tot inzage door u is gedaan, vragen wij u een kopie van uw identiteitsbewijs met het verzoek mee te sturen. Maak in deze kopie uw pasfoto, MRZ (machine readable zone, de strook met nummers onderaan het paspoort), paspoortnummer en Burgerservicenummer (BSN) zwart. Dit ter bescherming van uw privacy. We reageren zo snel mogelijk, maar binnen vier weken, op uw verzoek.</p>
+</article>
+<article id="art9" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">9.</span> Beveiliging</h2>
+<p style="margin: 0 0 14px; color: #3b4656">Bold EV neemt de bescherming van uw gegevens serieus en neemt passende maatregelen om misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging tegen te gaan. Het dealerportal maakt gebruik van een beveiligde SSL-verbinding. Als u de indruk heeft dat uw gegevens niet goed beveiligd zijn, neem dan contact op via <a href="mailto:info@boldev.nl" style="color: #003070; font-weight: 600">info@boldev.nl</a></p>
+</article>
+<article id="art10" style="padding: 24px 0; border-top: 1px solid #e3e7ee; scroll-margin-top: 120px">
+<h2 style="margin: 0 0 16px; font-size: 22px; line-height: 1.25; color: #003070; font-weight: 700"><span style="color: #b24a0a">10.</span> Disclaimer</h2>
+<p style="margin: 0 0 14px; color: #3b4656">Bold EV spant zich in om informatie die zij aanbiedt op het dealerportal zo volledig en nauwkeurig mogelijk te laten zijn, maar geeft hiervoor geen garanties.</p>
+<p style="margin: 0 0 14px; color: #3b4656">Bold EV is niet aansprakelijk voor eventuele schade ontstaan als gevolg van onjuistheid of onvolledigheid van de op de website/portal vermelde gegevens.</p>
+<p style="margin: 0 0 14px; color: #3b4656">De maximale actieradius en snelheid van onze producten zoals vermeld in het portal zijn indicatief en afhankelijk van factoren zoals ondergrond, gewicht en weer.</p>
+<p style="margin: 0 0 14px; color: #3b4656">Niets van het dealerportal mag zonder schriftelijke en voorafgaande toestemming van Bold EV worden gereproduceerd of gebruikt voor andere doeleinden dan de bedrijfsvoering tussen Dealer en Bold EV.</p>
+</article>
+<p style="margin: 8px 0 0; padding-top: 20px; border-top: 1px solid #e3e7ee; color: #4a5566; font-size: 16px">Vragen over je privacy? Mail <a href="mailto:info@boldev.nl" style="color: #003070; font-weight: 600">info@boldev.nl</a> of bel <a href="tel:+31850805282" style="color: #003070; font-weight: 600">085 080 52 82</a>.</p>
+</section>
+
+<!-- Footer -->
+<footer id="contact" style="background: #00214f; color: #d6e0ef; padding: 56px 16px 40px; font-size: 17px">
+<img src="img/d0d18112136b88d0c9b4622987239b06.png" alt="Bold" style="height: 24px; width: auto; display: block; margin-bottom: 16px">
+<p style="margin: 0 0 4px">Bold EV · Artemisweg 260, 8239 DE Lelystad</p>
+<p style="margin: 0 0 24px; font-size: 16px">Bezoek op afspraak</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 32px">
+<a href="tel:+31850805282" style="display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 12px; border: 2px solid #3a5a8c; color: #ffffff; font-weight: 600; text-decoration: none">Bellen</a>
+<a href="https://wa.me/31683801610" style="display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 12px; border: 2px solid #3a5a8c; color: #ffffff; font-weight: 600; text-decoration: none">WhatsApp</a>
+</div>
+<p style="margin: 0 0 8px; color: #ffffff; font-weight: 600">Particulier</p>
+<div style="display: flex; flex-direction: column; margin-bottom: 24px">
+<a href="#" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">Bold Cura</a>
+<a href="m-titan.html" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">Bold Titan</a>
+<a href="mailto:info@boldev.nl" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">info@boldev.nl</a>
+</div>
+<p style="margin: 0 0 8px; color: #ffffff; font-weight: 600">Zakelijk</p>
+<div style="display: flex; flex-direction: column; margin-bottom: 32px">
+<a href="m-dealer-worden.html" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">Dealer worden</a>
+<a href="https://boldev.brincr.com/portal/" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">Dealer login</a>
+</div>
+<div style="padding-top: 20px; border-top: 1px solid #1f3d6b; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px">
+<span>© 2026 Bold EV</span>
+<a href="m-privacy.html" style="color: #d6e0ef">Privacyverklaring</a>
+<a href="m-voorwaarden.html" style="color: #d6e0ef">Algemene voorwaarden</a>
+</div>
+</footer>
+<sc-if value="{{ ui.leaving }}" hint-placeholder-val="{{ false }}">
+<div aria-live="polite" style="position: fixed; inset: 0; z-index: 80; background: rgba(255, 255, 255, 0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; animation: boldfade 220ms ease both">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 50%; border: 5px solid #e3e7ee; border-top-color: #ff8036; animation: boldspin 900ms linear infinite; display: block"></span>
+<p style="margin: 0; font-weight: 600; color: #003070">Even geduld…</p>
+</div>
+</sc-if>
+<sc-if value="{{ ui.toastOn }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="position: fixed; left: 50%; bottom: 32px; z-index: 90; width: max-content; max-width: calc(100% - 32px); background: #00214f; color: #ffffff; padding: 16px 24px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); font-weight: 500; text-align: center; animation: boldtoast 300ms ease both">{{ ui.toastText }}</div>
+</sc-if>
+</div>
+</template>
+<script src="assets/dc.js"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { dd: false, sub: false, toast: '', leaving: false, searching: false, sending: false, menu: false, vis: 'shown', f: { naam: '', mail: '', tel: '' }, msg: '', topic: '', pref: 'bellen', tried: false, sent: false };
+  }
+  componentDidMount() {
+    try { this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { this.reduce = false; }
+  }
+  componentWillUnmount() { (this.timers || []).forEach(clearTimeout); }
+  later(ms, fn) { this.timers = this.timers || []; this.timers.push(setTimeout(fn, ms)); }
+  // Laat de huidige inhoud wegfaden, past de state aan en fade de nieuwe inhoud in.
+  swap(changes, done) {
+    var self = this;
+    if (this.reduce) { this.setState(changes()); if (done) done(); return; }
+    this.setState({ vis: 'leaving' });
+    this.later(240, function () {
+      var ch = changes(); ch.vis = 'entering'; self.setState(ch);
+      self.later(30, function () { self.setState({ vis: 'shown' }); self.later(260, function () { if (done) done(); }); });
+    });
+  }
+  renderVals() {
+    var self = this, s = this.state;
+    // Contactformulier
+    function opt(sel, center) {
+      return 'display: block; width: 100%; text-align: ' + (center ? 'center' : 'left') + '; padding: 16px 18px; border-radius: 8px; cursor: pointer; font: 500 17px/1.35 Poppins, sans-serif; color: #1a2433; ' + (sel ? 'border: 3px solid #003070; background: #e8eef7' : 'border: 2px solid #c9d3e2; background: #ffffff');
+    }
+    function inputStyle(err) { return 'min-height: 58px; padding: 0 18px; border-radius: 8px; font: 400 18px Poppins, sans-serif; color: #1a2433; background: #ffffff; width: 100%; border: ' + (err ? '2px solid #b42318' : '2px solid #8a96a8'); }
+    var F = s.f;
+    var DEF = [
+      ['naam', 'Naam', 'text', 'name', function (v) { return v.trim().length > 1 ? '' : 'Vul je naam in.'; }, false],
+      ['tel', 'Telefoonnummer', 'tel', 'tel', function (v) { return v.replace(/\D/g, '').length >= 10 ? '' : 'Vul een telefoonnummer van 10 cijfers in.'; }, false],
+      ['mail', 'E-mailadres', 'email', 'email', function (v) { return /^\S+@\S+\.\S+$/.test(v.trim()) ? '' : 'Vul een geldig e-mailadres in.'; }, true]
+    ];
+    var errs = {}, nErr = 0;
+    DEF.forEach(function (d) { var e = d[4](F[d[0]] || ''); errs[d[0]] = e; if (e) nErr++; });
+    var msgBad = (s.msg || '').trim().length < 5; if (msgBad) nErr++;
+    if (!s.topic) nErr++;
+    var TOPICS = [
+      ['model', 'Een model', 'Cura, Titan, prijzen of opties'],
+      ['vergoeding', 'Vergoeding of betalen', 'WMO, PGB of gespreid betalen'],
+      ['service', 'Service of garantie', 'Onderhoud, reparatie of onderdelen'],
+      ['anders', 'Iets anders', 'Elke vraag is welkom']
+    ];
+    var PH = { model: 'Bijvoorbeeld: past mijn rollator in de Cura?', vergoeding: 'Bijvoorbeeld: hoe vraag ik vergoeding aan bij mijn gemeente?', service: 'Bijvoorbeeld: mijn accu laadt niet meer goed op.', anders: 'Typ hier je vraag.' };
+    var ct = {
+      wrapStyle: 'transition: opacity 240ms ease, transform 240ms ease; ' + (s.vis === 'leaving' ? 'opacity: 0; transform: translateY(-10px)' : s.vis === 'entering' ? 'opacity: 0; transform: translateY(10px)' : 'opacity: 1; transform: none'),
+      notSent: !s.sent, sent: s.sent,
+      topics: TOPICS.map(function (t) {
+        return { title: t[1], desc: t[2], selected: s.topic === t[0], style: opt(s.topic === t[0]), pick: function () { self.setState({ topic: t[0] }); } };
+      }),
+      isService: s.topic === 'service', errTopic: s.tried && !s.topic,
+      placeholder: PH[s.topic] || 'Typ hier je vraag.',
+      fields: DEF.map(function (d) {
+        var showErr = s.tried && !!errs[d[0]];
+        return {
+          id: 'ct-' + d[0], label: d[1], type: d[2], ac: d[3], value: F[d[0]], hasErr: showErr, err: errs[d[0]],
+          wrap: 'display: flex; flex-direction: column; gap: 8px; ' + (d[5] ? 'grid-column: 1 / -1' : ''),
+          onChange: function (e) { var nf = Object.assign({}, self.state.f); nf[d[0]] = e.target.value; self.setState({ f: nf }); },
+          style: inputStyle(showErr)
+        };
+      }),
+      msg: s.msg, onMsg: function (e) { self.setState({ msg: e.target.value }); },
+      msgErr: s.tried && msgBad,
+      msgStyle: 'display: block; width: 100%; padding: 16px 18px; border-radius: 8px; font: 400 18px/1.5 Poppins, sans-serif; color: #1a2433; resize: vertical; border: ' + (s.tried && msgBad ? '2px solid #b42318' : '2px solid #8a96a8'),
+      submitLabel: s.sending ? 'Bezig met versturen…' : 'Verstuur je vraag',
+      thanks: s.topic === 'service' ? 'We kijken met je mee en zetten je vraag zo nodig door naar je dealer. Je hoort binnen 24 uur van ons.' : 'We nemen zo snel mogelijk contact met je op.',
+      firstName: (F.naam || '').trim().split(' ')[0] || '',
+      submit: function (e) {
+        if (e && e.preventDefault) e.preventDefault();
+        if (self.state.sending) return;
+        if (nErr > 0) { self.setState({ tried: true }); return; }
+        self.setState({ sending: true, tried: false });
+        self.later(1100, function () { self.swap(function () { return { sending: false, sent: true }; }); });
+      },
+      reset: function () { self.swap(function () { return { sent: false, msg: '', topic: '' }; }); }
+    };
+
+    var ui = {
+      leaving: !!s.leaving, toastOn: !!s.toast, toastText: s.toast,
+      // Klikken op links: lege links tonen een melding.
+      rootClick: function (e) {
+        var t = e.target, a = t && t.closest ? t.closest('a') : null;
+        if (!a) { if (s.dd && !(t.closest && t.closest('[aria-controls="dd-modellen"], #dd-modellen'))) self.setState({ dd: false }); return; }
+        var h = a.getAttribute('href') || '';
+        if (h === '#') {
+          e.preventDefault();
+          clearTimeout(self.tt); self.setState({ toast: 'Deze pagina ontwerpen we in een volgende ronde.', dd: false });
+          self.tt = setTimeout(function () { self.setState({ toast: '' }); }, 2800);
+          return;
+        }
+        if (h.charAt(0) === '#') { self.setState({ dd: false, menu: false }); return; }
+      }
+    };
+    var nav = {
+      ddOpen: !!s.dd, toggleDd: function () { self.setState({ dd: !self.state.dd }); },
+      subOpen: !!s.sub, toggleSub: function () { self.setState({ sub: !self.state.sub }); },
+      chev: 'transition: transform 200ms ease; transform: rotate(' + ((s.dd || s.sub) ? '180deg' : '0deg') + ')',
+      ddBtn: 'display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 0 16px; border-radius: 10px; border: none; cursor: pointer; font: 500 18px Poppins, sans-serif; color: #1a2433; background: ' + (s.dd ? '#e8eef7' : 'transparent')
+    };
+    return { ui: ui, nav: nav, ct: ct, menuOpen: s.menu, menuClosed: !s.menu, menuLabel: s.menu ? 'Sluit' : 'Menu', toggleMenu: function () { self.setState({ menu: !self.state.menu }); } };
+  }
+}
+
+DCMount(Component);
+</script>
+</body>
+</html>

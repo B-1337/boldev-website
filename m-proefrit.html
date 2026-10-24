@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bold EV · Proefrit mobiel</title>
+<script>if(window.innerWidth>=760){location.replace('proefrit.html'+location.hash);}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#00214f}
+*{box-sizing:border-box}
+a{color:#003070}a:hover{color:#00214f}
+:focus-visible{outline:3px solid #ff8036;outline-offset:3px}
+@keyframes boldspin{to{transform:rotate(360deg)}}
+@keyframes boldfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes boldtoast{from{opacity:0;transform:translate(-50%,14px)}to{opacity:1;transform:translate(-50%,0)}}
+html{scroll-behavior:smooth}
+a,button{transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .15s ease,filter .2s ease}
+a[style*="border-radius"]:hover,button[style*="border-radius"]:hover{filter:brightness(0.95);box-shadow:0 6px 18px rgba(0,33,79,0.16);transform:translateY(-1px)}
+a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform:translateY(0) scale(0.98);box-shadow:none}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition-duration:1ms !important}[data-fade],[data-fade] *{animation-name:none !important}}
+</style>
+<link rel="icon" href="img/5877295f782f172bdb42c6c44ba08c86.png">
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+
+<div data-fade onClick="{{ ui.rootClick }}" style="width: 390px; font-family: 'Poppins', system-ui, sans-serif; color: #1a2433; font-size: 18px; line-height: 1.6; background: #00214f; animation: boldfade 420ms ease both">
+
+<!-- Actiebalk -->
+<div style="background: #00214f; color: #ffffff; padding: 10px 16px; text-align: center; font-size: 16px; line-height: 1.45">
+<strong style="color: #ff8036; font-weight: 600">Tijdelijk:</strong> topkoffer t.w.v. €150 gratis bij elke Bold Titan. <a href="m-titan.html" style="color: #ffffff; font-weight: 600">Bekijk</a>
+</div>
+
+<!-- Header -->
+<header style="background: #ffffff; border-bottom: 1px solid #e3e7ee; position: sticky; top: 0; z-index: 10">
+<div style="padding: 10px 12px 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 8px">
+<a href="#" aria-label="Bold EV, naar de homepage" style="display: flex; align-items: center; gap: 8px; text-decoration: none">
+<img src="img/5877295f782f172bdb42c6c44ba08c86.png" alt="" style="width: 40px; height: 40px; display: block">
+<img src="img/d0d18112136b88d0c9b4622987239b06.png" alt="Bold" style="height: 20px; width: auto; display: block">
+</a>
+<div style="display: flex; gap: 4px">
+<button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" aria-controls="menu-m" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; width: 64px; height: 58px; border-radius: 12px; border: none; background: #e8eef7; color: #003070; font: 600 14px 'Poppins', sans-serif; cursor: pointer">
+<sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg></sc-if>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></sc-if>
+{{ menuLabel }}</button>
+</div>
+</div>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<nav id="menu-m" aria-label="Hoofdmenu" style="border-top: 1px solid #e3e7ee; padding: 8px 16px 20px; background: #ffffff; animation: boldfade 180ms ease both">
+<button type="button" onClick="{{ nav.toggleSub }}" aria-expanded="{{ nav.subOpen }}" style="display: flex; width: 100%; justify-content: space-between; align-items: center; min-height: 56px; padding: 0; border: none; border-bottom: 1px solid #eef1f5; background: none; font: 500 19px 'Poppins', sans-serif; color: #1a2433; cursor: pointer">Modellen
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="{{ nav.chev }}"><path d="m6 9 6 6 6-6"></path></svg></button>
+<sc-if value="{{ nav.subOpen }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 8px 0; border-bottom: 1px solid #eef1f5; animation: boldfade 180ms ease both">
+<a href="m-cura.html" style="display: flex; gap: 14px; align-items: center; padding: 8px; border-radius: 12px; text-decoration: none"><img src="img/7bbf2f938fc25c9f9567665b24eb4f1c.jpg" alt="" style="width: 84px; height: 58px; object-fit: contain; flex: none"><span><strong style="display: block; color: #003070">Bold Cura</strong><span style="color: #4a5566; font-size: 16px">v.a. <strong style="color: #1a2433">€7.090</strong></span></span></a>
+<a href="m-titan.html" style="display: flex; gap: 14px; align-items: center; padding: 8px; border-radius: 12px; text-decoration: none"><img src="img/081933fc3ed3685fc909a7f2a10eccf9.jpg" alt="" style="width: 84px; height: 58px; object-fit: contain; flex: none"><span><strong style="display: block; color: #003070">Bold Titan</strong><span style="color: #4a5566; font-size: 16px">v.a. <strong style="color: #1a2433">€2.699</strong></span></span></a>
+</div>
+</sc-if>
+<a href="m-proefrit.html" style="display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid #eef1f5; color: #1a2433; font-weight: 500; text-decoration: none; font-size: 19px">Proefrit</a>
+<a href="m-contact.html" style="display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid #eef1f5; color: #1a2433; font-weight: 500; text-decoration: none; font-size: 19px">Contact</a>
+<a href="https://boldev.brincr.com/portal/" style="display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid #eef1f5; color: #1a2433; font-weight: 500; text-decoration: none; font-size: 19px; gap: 8px">Dealer login <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"></path></svg></a>
+</nav>
+</sc-if>
+</header>
+
+<div style="background: #ffffff">
+<!-- Breadcrumb -->
+<nav aria-label="Kruimelpad" style="padding: 16px 16px 0; font-size: 16px; color: #4a5566">
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; flex-wrap: wrap">
+<li><a href="m-index.html" style="color: #003070">Home</a></li>
+<li aria-hidden="true">/</li>
+<li aria-current="page" style="color: #1a2433; font-weight: 500">Proefrit</li>
+</ol>
+</nav>
+
+<!-- Hero -->
+<section style="padding: 20px 0 28px">
+<div style="padding: 0 16px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center">
+<div style="flex: 1 1 100%; min-width: 0">
+<p style="margin: 0 0 12px; color: #b24a0a; font-weight: 600; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase">Gratis en vrijblijvend</p>
+<h1 style="margin: 0 0 20px; font-size: 38px; line-height: 1.12; font-weight: 700; color: #003070">Rijd zelf een proefrit</h1>
+<p style="margin: 0 0 28px; font-size: 19px; color: #3b4656; max-width: 36ch">Voel hoe makkelijk het rijdt. Bij ons in Lelystad of bij een dealer bij jou in de buurt.</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 19px">
+<li style="display: flex; gap: 12px; align-items: center"><span style="display: inline-flex; color: #1d7a46"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>Gratis, je zit nergens aan vast</li>
+<li style="display: flex; gap: 12px; align-items: center"><span style="display: inline-flex; color: #1d7a46"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>Geen rijbewijs nodig</li>
+<li style="display: flex; gap: 12px; align-items: center"><span style="display: inline-flex; color: #1d7a46"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>Je rijdt zelf, wij leggen alles uit</li>
+<li style="display: flex; gap: 12px; align-items: center"><span style="display: inline-flex; color: #1d7a46"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>Neem gerust iemand mee</li>
+</ul>
+</div>
+<div style="flex: 1 1 100%; min-width: 0">
+<img src="img/3536640f5df537ffe60c329ba2c80253.jpg" alt="Een dealer verwelkomt een klant bij een rode Bold Cura in de showroom" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; display: block">
+</div>
+</div>
+</section>
+
+<!-- Naar formulier -->
+<div style="display: flex; justify-content: center; padding: 0 16px 36px">
+<a href="#plannen" style="display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 68px; padding: 0 28px; width: 100%; border-radius: 18px; background: #ff8036; color: #00214f; font-weight: 700; font-size: 23px; text-decoration: none; box-shadow: 0 10px 28px rgba(255, 128, 54, 0.38)">Vul het formulier in
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg></a>
+</div>
+
+<!-- Formulier -->
+<section id="plannen" style="background: #003070; padding: 48px 0 56px">
+<div style="padding: 0 16px">
+
+<div style="color: #ffffff; margin-bottom: 28px">
+<h2 style="margin: 0 0 10px; font-size: 30px; line-height: 1.2; font-weight: 700">Plan je gratis proefrit</h2>
+<p style="margin: 0 0 12px; font-size: 18px; color: #d6e0ef">Twee korte stappen. Daarna bellen wij je binnen 24 uur.</p>
+<p style="margin: 0; color: #d6e0ef">Liever meteen bellen? <a href="tel:+31850805282" style="color: #ffffff; font-weight: 600">085 080 52 82</a></p>
+</div>
+
+<div style="background: #ffffff; border-radius: 12px; padding: 24px 18px">
+<div style="{{ pr.wrapStyle }}">
+<sc-if value="{{ pr.notSent }}" hint-placeholder-val="{{ true }}">
+<div style="margin-bottom: 32px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 10px">
+<p style="margin: 0; font-weight: 600; color: #003070">Stap {{ pr.stepNum }} van 2</p>
+<sc-if value="{{ pr.isStep2 }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ pr.back }}" style="min-height: 40px; padding: 0; border: none; background: none; color: #003070; font: 600 16px 'Poppins', sans-serif; text-decoration: underline; text-underline-offset: 4px; cursor: pointer">Vorige stap</button></sc-if>
+</div>
+<div style="height: 8px; border-radius: 4px; background: #e8eef7; overflow: hidden"><div style="{{ pr.barStyle }}"></div></div>
+</div>
+
+<sc-if value="{{ pr.isStep1 }}" hint-placeholder-val="{{ true }}">
+<div role="form" style="display: flex; flex-direction: column; gap: 36px">
+<fieldset style="margin: 0; padding: 0; border: none">
+<legend style="padding: 0; margin-bottom: 14px; font-size: 20px; font-weight: 600">In welk model wil je rijden?</legend>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{ pr.models }}" as="o" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{ o.selected }}" onClick="{{ o.pick }}" style="{{ o.style }}">
+<img src="{{ o.img }}" alt="" style="width: 100%; height: 90px; object-fit: contain; display: block; margin-bottom: 10px">
+<strong style="display: block; font-size: 20px">{{ o.title }}</strong><span style="display: block; color: #3b4656; font-size: 16px">{{ o.desc }}</span></button>
+</sc-for>
+</div>
+<sc-if value="{{ pr.errModel }}" hint-placeholder-val="{{ false }}"><p style="margin: 10px 0 0; color: #b42318; font-weight: 500">Kies een model.</p></sc-if>
+</fieldset>
+
+<fieldset style="margin: 0; padding: 0; border: none">
+<legend style="padding: 0; margin-bottom: 14px; font-size: 20px; font-weight: 600">Waar wil je proefrijden?</legend>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{ pr.places }}" as="o" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{ o.selected }}" onClick="{{ o.pick }}" style="{{ o.style }}"><span style="{{ o.iconStyle }}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ o.icon }}"></path></svg></span><strong style="display: block; font-size: 19px">{{ o.title }}</strong><span style="display: block; color: #3b4656; font-size: 16px; margin-top: 2px">{{ o.desc }}</span></button>
+</sc-for>
+</div>
+<sc-if value="{{ pr.needPc }}" hint-placeholder-val="{{ false }}">
+<div style="margin-top: 16px; padding: 20px 22px; border-radius: 8px; background: #f3f6fa; animation: boldfade 250ms ease both">
+<label for="pr-pc" style="display: block; font-weight: 600; margin-bottom: 8px">Je postcode</label>
+<input id="pr-pc" type="text" autocomplete="postal-code" placeholder="Bijv. 8239 DE" value="{{ pr.pc }}" onChange="{{ pr.onPc }}" onKeyDown="{{ pr.onKey }}" aria-invalid="{{ pr.errPc }}" style="{{ pr.pcStyle }}">
+<sc-if value="{{ pr.errPc }}" hint-placeholder-val="{{ false }}"><p style="margin: 8px 0 0; color: #b42318; font-weight: 500">{{ pr.pcMsg }}</p></sc-if>
+<sc-if value="{{ pr.hasDealer }}" hint-placeholder-val="{{ false }}">
+<div style="margin-top: 14px; animation: boldfade 300ms ease both">
+<p style="margin: 0 0 2px; color: #4a5566; font-size: 16px">{{ pr.dealerLead }}</p>
+<p style="margin: 0; font-size: 19px; font-weight: 600; color: #003070">{{ pr.dealer.name }} <span style="font-weight: 500; color: #1a2433">· ± {{ pr.dealer.km }} km</span></p>
+<p style="margin: 2px 0 0; color: #3b4656; font-size: 16px">{{ pr.dealer.address }} · {{ pr.dealer.hours }}</p>
+</div>
+</sc-if>
+</div>
+</sc-if>
+<sc-if value="{{ pr.showThuisLink }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ pr.revealThuis }}" style="margin-top: 12px; min-height: 44px; padding: 0; border: none; background: none; color: #4a5566; font: 400 16px 'Poppins', sans-serif; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; text-align: left">Kun je echt niet naar een dealer of naar Lelystad komen?</button>
+</sc-if>
+<sc-if value="{{ pr.errWhere }}" hint-placeholder-val="{{ false }}"><p style="margin: 10px 0 0; color: #b42318; font-weight: 500">Kies waar je wilt proefrijden.</p></sc-if>
+</fieldset>
+
+<button type="button" onClick="{{ pr.next }}" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 64px; border-radius: 8px; border: none; background: #ff8036; color: #00214f; font: 600 20px 'Poppins', sans-serif; cursor: pointer">Volgende stap
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</sc-if>
+
+<sc-if value="{{ pr.isStep2 }}" hint-placeholder-val="{{ false }}">
+<div role="form" style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 12px; align-items: center; padding: 14px; border-radius: 8px; background: #f3f6fa">
+<img src="{{ pr.modelImg }}" alt="" style="width: 72px; height: 50px; object-fit: contain; flex: none">
+<div style="flex: 1; min-width: 0"><p style="margin: 0; font-weight: 600; color: #003070">{{ pr.modelName }}</p><p style="margin: 0; color: #3b4656; font-size: 16px">{{ pr.placeTxt }}</p></div>
+<button type="button" onClick="{{ pr.back }}" style="min-height: 44px; padding: 0; border: none; background: none; color: #003070; font: 600 16px 'Poppins', sans-serif; text-decoration: underline; text-underline-offset: 4px; cursor: pointer">Wijzig</button>
+</div>
+<fieldset style="margin: 0; padding: 0; border: none">
+<legend style="padding: 0; margin-bottom: 14px; font-size: 20px; font-weight: 600">Hoe bereiken we je?</legend>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px">
+<sc-for list="{{ pr.fields }}" as="f" hint-placeholder-count="3">
+<div style="{{ f.wrap }}">
+<label for="{{ f.id }}" style="font-weight: 600">{{ f.label }}</label>
+<input id="{{ f.id }}" type="{{ f.type }}" autocomplete="{{ f.ac }}" value="{{ f.value }}" onChange="{{ f.onChange }}" aria-invalid="{{ f.hasErr }}" style="{{ f.style }}">
+<sc-if value="{{ f.hasErr }}" hint-placeholder-val="{{ false }}"><span style="color: #b42318; font-size: 16px; font-weight: 500">{{ f.err }}</span></sc-if>
+</div>
+</sc-for>
+</div>
+</fieldset>
+<button type="button" onClick="{{ pr.submit }}" style="width: 100%; min-height: 64px; border-radius: 8px; border: none; background: #ff8036; color: #00214f; font: 600 20px 'Poppins', sans-serif; cursor: pointer">{{ pr.submitLabel }}</button>
+</div>
+</sc-if>
+</sc-if>
+
+<sc-if value="{{ pr.sent }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="display: flex; flex-direction: column; gap: 20px">
+<span style="display: inline-flex; width: 64px; height: 64px; border-radius: 50%; background: #e6f4ec; color: #1d7a46; align-items: center; justify-content: center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<h2 style="margin: 0; font-size: 26px; line-height: 1.25; color: #003070; font-weight: 700">Bedankt, {{ pr.firstName }}! We bellen je binnen 24 uur.</h2>
+<p style="margin: 0; color: #3b4656">{{ pr.thanks }}</p>
+<div style="padding: 18px 22px; border-radius: 8px; background: #f3f6fa"><p style="margin: 0 0 2px; font-weight: 600">Je proefrit</p><p style="margin: 0; color: #3b4656">{{ pr.summary }}</p></div>
+<button type="button" onClick="{{ pr.reset }}" style="align-self: flex-start; min-height: 44px; padding: 0; border: none; background: none; color: #003070; font: 600 17px 'Poppins', sans-serif; text-decoration: underline; text-underline-offset: 4px; cursor: pointer">Terug naar het formulier</button>
+</div>
+</sc-if>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Footer -->
+<footer id="contact" style="background: #00214f; color: #d6e0ef; padding: 56px 16px 40px; font-size: 17px">
+<img src="img/d0d18112136b88d0c9b4622987239b06.png" alt="Bold" style="height: 24px; width: auto; display: block; margin-bottom: 16px">
+<p style="margin: 0 0 4px">Bold EV · Artemisweg 260, 8239 DE Lelystad</p>
+<p style="margin: 0 0 24px; font-size: 16px">Bezoek op afspraak</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 32px">
+<a href="tel:+31850805282" style="display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 12px; border: 2px solid #3a5a8c; color: #ffffff; font-weight: 600; text-decoration: none">Bellen</a>
+<a href="https://wa.me/31683801610" style="display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 12px; border: 2px solid #3a5a8c; color: #ffffff; font-weight: 600; text-decoration: none">WhatsApp</a>
+</div>
+<p style="margin: 0 0 8px; color: #ffffff; font-weight: 600">Particulier</p>
+<div style="display: flex; flex-direction: column; margin-bottom: 24px">
+<a href="#" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">Bold Cura</a>
+<a href="m-titan.html" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">Bold Titan</a>
+<a href="mailto:info@boldev.nl" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">info@boldev.nl</a>
+</div>
+<p style="margin: 0 0 8px; color: #ffffff; font-weight: 600">Zakelijk</p>
+<div style="display: flex; flex-direction: column; margin-bottom: 32px">
+<a href="m-dealer-worden.html" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">Dealer worden</a>
+<a href="https://boldev.brincr.com/portal/" style="display: flex; align-items: center; min-height: 44px; color: #d6e0ef; text-decoration: none">Dealer login</a>
+</div>
+<div style="padding-top: 20px; border-top: 1px solid #1f3d6b; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px">
+<span>© 2026 Bold EV</span>
+<a href="m-privacy.html" style="color: #d6e0ef">Privacyverklaring</a>
+<a href="m-voorwaarden.html" style="color: #d6e0ef">Algemene voorwaarden</a>
+</div>
+</footer>
+<sc-if value="{{ ui.leaving }}" hint-placeholder-val="{{ false }}">
+<div aria-live="polite" style="position: fixed; inset: 0; z-index: 80; background: rgba(255, 255, 255, 0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; animation: boldfade 220ms ease both">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 50%; border: 5px solid #e3e7ee; border-top-color: #ff8036; animation: boldspin 900ms linear infinite; display: block"></span>
+<p style="margin: 0; font-weight: 600; color: #003070">Even geduld…</p>
+</div>
+</sc-if>
+<sc-if value="{{ ui.toastOn }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="position: fixed; left: 50%; bottom: 32px; z-index: 90; width: max-content; max-width: calc(100% - 32px); background: #00214f; color: #ffffff; padding: 16px 24px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); font-weight: 500; text-align: center; animation: boldtoast 300ms ease both">{{ ui.toastText }}</div>
+</sc-if>
+</div>
+</template>
+<script src="assets/dc.js"></script>
+<script>
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { dd: false, sub: false, toast: '', leaving: false, searching: false, sending: false, menu: false, vis: 'shown', model: '', where: '', showThuis: false, pc: '', f: { naam: '', tel: '', mail: '' }, tried: false, sent: false, step: 1, showMail: false };
+  }
+  componentDidMount() {
+    try { this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { this.reduce = false; }
+  }
+  componentWillUnmount() { (this.timers || []).forEach(clearTimeout); }
+  later(ms, fn) { this.timers = this.timers || []; this.timers.push(setTimeout(fn, ms)); }
+  // Laat de huidige inhoud wegfaden, past de state aan en fade de nieuwe inhoud in.
+  swap(changes, done) {
+    var self = this;
+    if (this.reduce) { this.setState(changes()); if (done) done(); return; }
+    this.setState({ vis: 'leaving' });
+    this.later(240, function () {
+      var ch = changes(); ch.vis = 'entering'; self.setState(ch);
+      self.later(30, function () { self.setState({ vis: 'shown' }); self.later(260, function () { if (done) done(); }); });
+    });
+  }
+  renderVals() {
+    var self = this, s = this.state;
+    var DEALERS = [
+      ['De Graaf Mobiliteit', 'Amsterdam', 'Nieuwe Hemweg 7C, 1013 BG Amsterdam', '0226-355546', 52.389, 4.873],
+      ['De Graaf Mobiliteit', 'Opmeer', 'De Veken 5, 1716 KE Opmeer', '0226-355546', 52.706, 4.946],
+      ['Motion Mobility', 'Almere', 'Argonweg 125, Almere', '085-2127571', 52.381, 5.236],
+      ['Scootmobiel Specialist Eindhoven', 'Eindhoven', 'Industrieweg 3, 5627 BS Eindhoven', '040-2567700', 51.470, 5.470],
+      ['Scootmobiel Specialist Woerden', 'Woerden', 'Bierbrouwersweg 14, 3449 HW Woerden', '0800-2020', 52.090, 4.890],
+      ['TDM Brommobielen', 'Stadskanaal', 'Veenstraat 22A, 9502 EZ Stadskanaal', '0599-769061', 52.990, 6.950],
+      ['Scootmobielwinkel Haren', 'Haren', 'Felland 7b-1, 9753 TA Haren', '050-3053383', 53.170, 6.600],
+      ['Edescoot', 'Ede', 'Telefoonweg 74, 6713 AL Ede', '06-14133162', 52.040, 5.650],
+      ['Brommobielcenter Limburg', 'Beek', 'Schuttersstraat 27A, 6191 RZ Beek', '06-30111623', 50.940, 5.790],
+      ['Brommobielcenter Limburg', 'Melick', 'Heinsbergerweg 48, 6074 AE Melick', '0475-470471', 51.160, 6.020],
+      ['Mobiliteitswereld', 'Sittard', 'Rijksweg Zuid 212, 6134 AE Sittard', '046-7820552', 50.990, 5.860],
+      ['Autobedrijf Jan Marcellis', 'Oss', 'Margrietlaan 7, 5342 EJ Oss', '0412-626128', 51.760, 5.520],
+      ['Zorgplaza Noord', 'Roden', 'Kanaalstraat 27, 9301 LP Roden', '050-7370340', 53.140, 6.430],
+      ['Autobedrijf Minnaard', 'Kuinre', 'De Schans 27, 8374 KD Kuinre', '0527-231731', 52.790, 5.840],
+      ['EV4you', 'Zwolle', 'Popovstraat 74, 8013 RK Zwolle', '06-36431989', 52.510, 6.090],
+      ['Autobedrijf Ton Wilbrink', 'Apeldoorn', 'De Moestuin 1, 7325 GD Apeldoorn', '055-5403202', 52.210, 5.960],
+      ['Scooby’s Tweewielers', 'Alphen aan den Rijn', 'Zaagmolenweg 10, 2401 LN Alphen aan den Rijn', '0172-260065', 52.130, 4.660]
+    ];
+    var PC = '10:52.37,4.90|11:52.31,4.95|12:52.23,5.17|13:52.37,5.22|14:52.45,4.82|15:52.50,4.80|16:52.65,5.05|17:52.75,4.85|18:52.63,4.75|19:52.46,4.62|20:52.38,4.64|21:52.33,4.60|22:52.20,4.45|23:52.16,4.49|24:52.13,4.66|25:52.07,4.30|26:52.01,4.36|27:52.03,4.50|28:52.01,4.71|29:51.90,4.60|30:51.92,4.48|31:51.90,4.40|32:51.85,4.30|33:51.81,4.67|34:52.05,5.05|35:52.09,5.12|36:52.20,5.00|37:52.10,5.30|38:52.16,5.39|39:52.03,5.55|40:51.88,5.43|41:51.90,5.20|42:51.83,5.00|43:51.50,3.90|44:51.50,3.70|45:51.33,3.80|46:51.50,4.29|47:51.55,4.47|48:51.59,4.78|49:51.65,4.85|50:51.56,5.09|51:51.65,5.05|52:51.69,5.30|53:51.75,5.30|54:51.66,5.62|55:51.40,5.30|56:51.44,5.48|57:51.48,5.65|58:51.50,6.00|59:51.37,6.17|60:51.25,5.75|61:51.00,5.85|62:50.85,5.69|63:50.88,5.95|64:50.88,6.00|65:51.84,5.86|66:51.85,5.75|67:52.04,5.67|68:51.98,5.91|69:51.95,6.10|70:51.97,6.40|71:51.90,6.60|72:52.14,6.20|73:52.21,5.96|74:52.26,6.16|75:52.22,6.89|76:52.35,6.65|77:52.50,6.55|78:52.78,6.90|79:52.70,6.30|80:52.51,6.09|81:52.45,6.30|82:52.52,5.48|83:52.71,5.75|84:52.96,5.92|85:52.95,5.65|86:53.03,5.66|87:52.92,5.42|88:53.10,5.45|89:53.20,5.80|90:53.20,6.20|91:53.30,5.95|92:53.10,6.10|93:53.14,6.43|94:52.99,6.56|95:52.99,6.95|96:53.15,6.75|97:53.21,6.57|98:53.30,6.40|99:53.32,6.85';
+    function nearest(lat, lon) {
+      function km(a1, o1, a2, o2) { var R = 6371, d1 = (a2 - a1) * Math.PI / 180, d2 = (o2 - o1) * Math.PI / 180; var x = Math.sin(d1 / 2) * Math.sin(d1 / 2) + Math.cos(a1 * Math.PI / 180) * Math.cos(a2 * Math.PI / 180) * Math.sin(d2 / 2) * Math.sin(d2 / 2); return 2 * R * Math.asin(Math.sqrt(x)); }
+      return DEALERS.map(function (d) { return { d: d, km: km(lat, lon, d[4], d[5]) }; })
+        .sort(function (x, y) { return x.km - y.km; }).slice(0, 3)
+        .map(function (r) { var d = r.d; return { name: d[0].indexOf(d[1]) > -1 ? d[0] : d[0] + ' ' + d[1], city: d[1], address: d[2], phone: d[3], tel: 'tel:' + d[3].replace(/[^0-9]/g, ''), km: Math.max(1, Math.round(r.km)) }; });
+    }
+    // Proefrit: één formulier
+    var HOURS = {
+      'Amsterdam': 'ma–vr 10:00–16:00 · za op afspraak', 'Opmeer': 'ma–vr 08:00–17:00 · za 10:00–16:00', 'Almere': 'ma–vr 10:00–17:00 · za 11:00–17:00',
+      'Eindhoven': 'di–vr 09:00–17:30 · za 10:00–16:00', 'Woerden': 'di–vr 09:00–17:00 · za 10:00–16:00', 'Stadskanaal': 'ma–vr 09:00–17:30 · za 09:00–16:00',
+      'Haren': 'ma–vr 09:00–18:00 · za 10:00–16:30', 'Ede': 'ma–vr 10:00–17:00 · za 10:00–15:00', 'Beek': 'di–do 10:00–16:00 · vr 10:00–15:00',
+      'Melick': 'ma–vr 08:30–17:00 · za 10:00–13:00', 'Sittard': 'ma–vr 10:00–17:00 · za 10:00–16:00', 'Oss': 'ma–vr 09:00–17:00 · za 10:00–15:00',
+      'Roden': 'ma–vr 09:00–17:30 · za 10:00–16:00', 'Kuinre': 'ma–vr 08:00–18:00 · za 10:00–16:00', 'Zwolle': 'ma–vr 08:30–18:00 · za op afspraak',
+      'Apeldoorn': 'ma–vr 08:30–18:00 · za op afspraak', 'Alphen aan den Rijn': 'di–vr 10:00–17:00 · za 10:00–16:00'
+    };
+    function opt(sel) {
+      return 'display: block; width: 100%; text-align: left; padding: 18px 20px; border-radius: 8px; cursor: pointer; font: 400 18px/1.45 Poppins, sans-serif; color: #1a2433; ' + (sel ? 'border: 3px solid #003070; background: #e8eef7' : 'border: 2px solid #c9d3e2; background: #ffffff');
+    }
+    var needPc = s.where === 'dealer' || s.where === 'thuis';
+    var pcm = String(s.pc || '').replace(/\s/g, '').match(/^(\d{4})/);
+    var dealer = null, pcMsg = 'Vul je postcode in, bijvoorbeeld 8239 DE.';
+    if (needPc && pcm) {
+      var map = {}; PC.split('|').forEach(function (p) { var k = p.split(':'); map[k[0]] = k[1].split(',').map(Number); });
+      var c = map[pcm[1].slice(0, 2)];
+      if (c) { dealer = nearest(c[0], c[1])[0]; dealer.hours = HOURS[dealer.city] || ''; }
+      else pcMsg = 'Deze postcode kennen we niet. Controleer of hij klopt.';
+    }
+    var F = s.f;
+    var DEF = [
+      ['naam', 'Naam', 'text', 'name', function (v) { return v.trim().length > 1 ? '' : 'Vul je naam in.'; }, false],
+      ['tel', 'Telefoonnummer', 'tel', 'tel', function (v) { return v.replace(/\D/g, '').length >= 10 ? '' : 'Vul een telefoonnummer van 10 cijfers in.'; }, false],
+      ['mail', 'E-mailadres', 'email', 'email', function (v) { return /^\S+@\S+\.\S+$/.test(v.trim()) ? '' : 'Vul een geldig e-mailadres in.'; }, true]
+    ];
+    var errs = {}, nErr = 0;
+    DEF.forEach(function (d) { var e = d[4](F[d[0]] || ''); errs[d[0]] = e; if (e) nErr++; });
+    var badModel = !s.model, badWhere = !s.where, badPc = needPc && !dealer;
+    var nErr1 = (badModel ? 1 : 0) + (badWhere ? 1 : 0) + (badPc ? 1 : 0);
+    var MODEL = { cura: 'Bold Cura', titan: 'Bold Titan' };
+    var placeTxt = s.where === 'lelystad' ? 'bij Bold EV in Lelystad' : s.where === 'dealer' ? (dealer ? 'bij ' + dealer.name : 'bij een dealer') : 'bij jou thuis';
+    var places = [
+      ['lelystad', 'In Lelystad', 'Bij de importeur, op afspraak', 'M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6'],
+      ['dealer', 'Bij een dealer', '17 locaties in Nederland', 'M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21zM12 12.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6z']
+    ];
+    if (s.showThuis || s.where === 'thuis') places.push(['thuis', 'Bij mij thuis', 'Alleen als langskomen echt niet lukt. Wij bellen je om het te bespreken.', 'M3 11 12 4l9 7M5 10v10h14V10']);
+    var pr = {
+      wrapStyle: 'transition: opacity 240ms ease, transform 240ms ease; ' + (s.vis === 'leaving' ? 'opacity: 0; transform: translateY(-10px)' : s.vis === 'entering' ? 'opacity: 0; transform: translateY(10px)' : 'opacity: 1; transform: none'),
+      notSent: !s.sent, sent: s.sent,
+      models: [['cura', 'Bold Cura', 'Overdekt, 2 zitplaatsen', 'img/7bbf2f938fc25c9f9567665b24eb4f1c.jpg'], ['titan', 'Bold Titan', 'Driewiel-scootmobiel', 'img/081933fc3ed3685fc909a7f2a10eccf9.jpg']].map(function (o) {
+        return { title: o[1], desc: o[2], img: o[3], selected: s.model === o[0], style: opt(s.model === o[0]) + '; text-align: center', pick: function () { self.setState({ model: o[0] }); } };
+      }),
+      places: places.map(function (o) {
+        var sel = s.where === o[0], minor = o[0] === 'thuis';
+        return { title: o[1], desc: o[2], icon: o[3], selected: sel, pick: function () { self.setState({ where: o[0] }); },
+          iconStyle: 'display: inline-flex; width: 44px; height: 44px; border-radius: 50%; align-items: center; justify-content: center; margin-bottom: 10px; ' + (sel ? 'background: #003070; color: #ffffff' : 'background: #e8eef7; color: #003070'),
+          style: opt(sel) + (minor ? '; grid-column: 1 / -1' : '') + (minor && !sel ? '; border-style: dashed; background: #fbfbfa' : '') };
+      }),
+      showThuisLink: !s.showThuis && s.where !== 'thuis',
+      revealThuis: function () { self.setState({ showThuis: true }); },
+      needPc: needPc, pc: s.pc, onPc: function (e) { self.setState({ pc: e.target.value }); },
+      hasDealer: !!dealer && s.where === 'dealer', dealer: dealer || { name: '', km: '', address: '', hours: '' },
+      dealerLead: s.where === 'thuis' ? 'Deze dealer neemt contact met je op:' : 'De dealer het dichtst bij jou:',
+      errPc: s.tried && badPc, pcMsg: pcMsg,
+      onKey: function (e) { if (e && e.key === 'Enter') pr.next(); },
+      stepNum: s.step, isStep1: s.step === 1, isStep2: s.step === 2,
+      barStyle: 'height: 100%; border-radius: 4px; background: #ff8036; transition: width 300ms ease; width: ' + (s.step === 1 ? '50%' : '100%'),
+      next: function () { if (nErr1 > 0) { self.setState({ tried: true }); return; } self.swap(function () { return { step: 2, tried: false }; }); },
+      back: function () { self.swap(function () { return { step: 1, tried: false }; }); },
+      modelImg: s.model === 'titan' ? 'img/081933fc3ed3685fc909a7f2a10eccf9.jpg' : 'img/7bbf2f938fc25c9f9567665b24eb4f1c.jpg',
+      modelName: MODEL[s.model] || '', placeTxt: 'Proefrit ' + placeTxt,
+      showMailLink: !s.showMail, revealMail: function () { self.setState({ showMail: true }); },
+      pcStyle: 'min-height: 58px; padding: 0 18px; border-radius: 12px; font: 500 19px Poppins, sans-serif; color: #1a2433; background: #ffffff; width: 100%; max-width: 280px; border: ' + (s.tried && badPc ? '2px solid #b42318' : '2px solid #8a96a8'),
+      errModel: s.tried && badModel, errWhere: s.tried && badWhere,
+      fields: DEF.map(function (d) {
+        var showErr = s.tried && !!errs[d[0]];
+        return {
+          id: 'pr-' + d[0], label: d[1], type: d[2], ac: d[3], value: F[d[0]], hasErr: showErr, err: errs[d[0]],
+          wrap: 'display: flex; flex-direction: column; gap: 8px; ' + (d[5] ? 'grid-column: 1 / -1' : ''),
+          onChange: function (e) { var nf = Object.assign({}, self.state.f); nf[d[0]] = e.target.value; self.setState({ f: nf }); },
+          style: 'min-height: 58px; padding: 0 18px; border-radius: 12px; font: 400 18px Poppins, sans-serif; color: #1a2433; background: #ffffff; width: 100%; border: ' + (showErr ? '2px solid #b42318' : '2px solid #8a96a8')
+        };
+      }),
+      note: s.where === 'thuis' ? 'Bold EV belt je binnen 24 uur om de proefrit aan huis te bespreken.' : 'We bellen je binnen 24 uur om een moment af te spreken.',
+      submitLabel: s.sending ? 'Bezig met versturen…' : 'Vraag je gratis proefrit aan',
+      summary: (MODEL[s.model] || '') + ' · ' + placeTxt,
+      thanks: s.where === 'thuis' ? 'We bellen je om te bespreken of een proefrit aan huis mogelijk is, en wanneer.' : s.where === 'lelystad' ? 'We bellen je om samen een moment te kiezen om langs te komen in Lelystad.' : 'We sturen je aanvraag door en bellen je om een moment af te spreken.',
+      firstName: (F.naam || '').trim().split(' ')[0] || '',
+      submit: function (e) {
+        if (e && e.preventDefault) e.preventDefault();
+        if (self.state.sending) return;
+        if (nErr > 0) { self.setState({ tried: true }); return; }
+        self.setState({ sending: true, tried: false });
+        self.later(1100, function () { self.swap(function () { return { sending: false, sent: true }; }); });
+      },
+      reset: function () { self.swap(function () { return { sent: false, step: 1 }; }); }
+    };
+    var ui = {
+      leaving: !!s.leaving, toastOn: !!s.toast, toastText: s.toast,
+      // Klikken op links: lege links tonen een melding.
+      rootClick: function (e) {
+        var t = e.target, a = t && t.closest ? t.closest('a') : null;
+        if (!a) { if (s.dd && !(t.closest && t.closest('[aria-controls="dd-modellen"], #dd-modellen'))) self.setState({ dd: false }); return; }
+        var h = a.getAttribute('href') || '';
+        if (h === '#') {
+          e.preventDefault();
+          clearTimeout(self.tt); self.setState({ toast: 'Deze pagina ontwerpen we in een volgende ronde.', dd: false });
+          self.tt = setTimeout(function () { self.setState({ toast: '' }); }, 2800);
+          return;
+        }
+        if (h.charAt(0) === '#') { self.setState({ dd: false, menu: false }); return; }
+      }
+    };
+    var nav = {
+      ddOpen: !!s.dd, toggleDd: function () { self.setState({ dd: !self.state.dd }); },
+      subOpen: !!s.sub, toggleSub: function () { self.setState({ sub: !self.state.sub }); },
+      chev: 'transition: transform 200ms ease; transform: rotate(' + ((s.dd || s.sub) ? '180deg' : '0deg') + ')',
+      ddBtn: 'display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 0 16px; border-radius: 10px; border: none; cursor: pointer; font: 500 18px Poppins, sans-serif; color: #1a2433; background: ' + (s.dd ? '#e8eef7' : 'transparent')
+    };
+    return { ui: ui, nav: nav, pr: pr, menuOpen: s.menu, menuClosed: !s.menu, menuLabel: s.menu ? 'Sluit' : 'Menu', toggleMenu: function () { self.setState({ menu: !self.state.menu }); } };
+  }
+}
+
+DCMount(Component);
+</script>
+</body>
+</html>

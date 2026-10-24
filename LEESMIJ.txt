@@ -1,0 +1,9 @@
+Bold EV website (ontwerpversie)
+
+Online zetten:
+- Vercel: maak een nieuw project en sleep deze map erin (of gebruik "vercel" in de terminal). Zet in het project "Analytics" aan voor bezoekersstatistieken.
+- Netlify: ga naar app.netlify.com/drop en sleep deze map erin.
+
+Let op:
+- De formulieren (proefrit, offerte, contact, dealer) tonen een bedankmelding maar versturen nog niets.
+- Bezoekers op een smal scherm (< 760 px) krijgen automatisch de mobiele pagina's (m-...html).
