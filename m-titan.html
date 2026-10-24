@@ -190,7 +190,7 @@ a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform
 
 <fieldset style="margin: 0; padding: 0; border: none">
 <legend style="padding: 0; margin-bottom: 4px; font-size: 24px; font-weight: 600">1. Kleur</legend>
-<p style="margin: 0 0 16px; color: #4a5566">Alle kleuren zonder meerprijs.</p>
+<p style="margin: 0 0 16px; color: #4a5566">Kies de kleur die bij je past. Alle kleuren kosten hetzelfde, geen meerprijs.</p>
 <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
 <sc-for list="{{ cfg.colors }}" as="c" hint-placeholder-count="4">
 <button type="button" aria-pressed="{{ c.selected }}" onClick="{{ c.pick }}" style="{{ c.card }}"><span style="{{ c.dotLg }}"></span><span>{{ c.name }}</span></button>
@@ -198,38 +198,54 @@ a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform
 </div>
 </fieldset>
 
-<sc-for list="{{ cfg.groups }}" as="g" hint-placeholder-count="4">
+<sc-for list="{{ cfg.groups }}" as="g" hint-placeholder-count="1">
+<sc-if value="{{ g.hasHead }}" hint-placeholder-val="{{ false }}"><div><h3 style="margin: 0 0 4px; font-size: 24px; font-weight: 600">{{ g.head }}</h3><p style="margin: 0; color: #4a5566">{{ g.headHint }}</p></div></sc-if>
 <fieldset style="margin: 0; padding: 0; border: none">
-<legend style="padding: 0; margin-bottom: 4px; font-size: 24px; font-weight: 600">{{ g.title }}</legend>
-<p style="margin: 0 0 16px; color: #4a5566">{{ g.hint }}</p>
+<legend style="{{ g.legendStyle }}">{{ g.title }}</legend>
+<sc-if value="{{ g.hasHint }}" hint-placeholder-val="{{ true }}"><p style="margin: 0 0 16px; color: #4a5566">{{ g.hint }}</p></sc-if>
 <div style="{{ g.grid }}">
 <sc-for list="{{ g.opts }}" as="o" hint-placeholder-count="2">
 <button type="button" aria-pressed="{{ o.selected }}" onClick="{{ o.pick }}" style="{{ o.style }}">
-<span style="display: block; font-size: 19px; font-weight: 600">{{ o.title }}</span>
-<span style="display: block; color: #3b4656; margin-top: 2px; font-size: 16px">{{ o.desc }}</span>
-<span style="display: block; margin-top: 10px; font-weight: 700">{{ o.price }}</span>
+<span style="display: block; font-size: 17px; font-weight: 600; white-space: nowrap">{{ o.title }}</span>
+<sc-if value="{{ o.hasDesc }}" hint-placeholder-val="{{ true }}"><span style="display: block; color: #3b4656; margin-top: 2px; font-size: 16px">{{ o.desc }}</span></sc-if>
+<span style="display: block; margin-top: 8px; font-weight: 700">{{ o.price }}</span>
 </button>
 </sc-for>
 </div>
-<sc-if value="{{ g.hasSide }}" hint-placeholder-val="{{ false }}">
-<div role="group" aria-label="Kant" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 14px; animation: boldfade 250ms ease both">
-<span style="font-weight: 600">Aan welke kant?</span>
-<sc-for list="{{ g.sides }}" as="sd" hint-placeholder-count="2">
-<button type="button" aria-pressed="{{ sd.selected }}" onClick="{{ sd.pick }}" style="{{ sd.style }}">{{ sd.title }}</button>
-</sc-for>
-</div>
-</sc-if>
 </fieldset>
 </sc-for>
 
 <fieldset style="margin: 0; padding: 0; border: none">
-<legend style="padding: 0; margin-bottom: 16px; font-size: 24px; font-weight: 600">3. Extra's</legend>
-<div style="display: flex; flex-direction: column; gap: 12px">
+<legend style="padding: 0; margin-bottom: 4px; font-size: 24px; font-weight: 600">4. Topkoffer</legend>
+<p style="margin: 0 0 16px; color: #4a5566">Afsluitbare koffer achterop voor boodschappen, jas of oplader. Tijdelijk gratis bij elke Titan.</p>
 <label style="{{ cfg.tkStyle }}">
 <input type="checkbox" checked="{{ cfg.tk }}" onChange="{{ cfg.toggleTk }}" style="width: 26px; height: 26px; margin: 2px 0 0; accent-color: #003070; flex: none">
-<span style="flex: 1"><span style="display: block; font-size: 19px; font-weight: 600">Topkoffer</span><span style="display: block; color: #3b4656; font-size: 16px">Tijdelijke actie, ter waarde van €150</span></span>
-<span style="display: flex; flex-direction: column; align-items: flex-end; white-space: nowrap"><span style="color: #4a5566; text-decoration: line-through">+ €150</span><span style="font-weight: 700; color: #1d7a46">Gratis</span></span>
+<span style="flex: 1"><span style="display: block; font-size: 19px; font-weight: 600">Inbegrepen</span><span style="display: block; color: #3b4656; font-size: 16px">Tijdelijke actie, ter waarde van €150</span></span>
+<span style="display: flex; flex-direction: column; align-items: flex-end; white-space: nowrap"><span style="color: #4a5566; text-decoration: line-through">€150</span><span style="font-weight: 700; color: #1d7a46">Nu gratis</span></span>
 </label>
+</fieldset>
+
+<sc-for list="{{ cfg.groups2 }}" as="g" hint-placeholder-count="1">
+<sc-if value="{{ g.hasHead }}" hint-placeholder-val="{{ false }}"><div><h3 style="margin: 0 0 4px; font-size: 24px; font-weight: 600">{{ g.head }}</h3><p style="margin: 0; color: #4a5566">{{ g.headHint }}</p></div></sc-if>
+<fieldset style="margin: 0; padding: 0; border: none">
+<legend style="{{ g.legendStyle }}">{{ g.title }}</legend>
+<sc-if value="{{ g.hasHint }}" hint-placeholder-val="{{ true }}"><p style="margin: 0 0 16px; color: #4a5566">{{ g.hint }}</p></sc-if>
+<div style="{{ g.grid }}">
+<sc-for list="{{ g.opts }}" as="o" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{ o.selected }}" onClick="{{ o.pick }}" style="{{ o.style }}">
+<span style="display: block; font-size: 17px; font-weight: 600; white-space: nowrap">{{ o.title }}</span>
+<sc-if value="{{ o.hasDesc }}" hint-placeholder-val="{{ true }}"><span style="display: block; color: #3b4656; margin-top: 2px; font-size: 16px">{{ o.desc }}</span></sc-if>
+<span style="display: block; margin-top: 8px; font-weight: 700">{{ o.price }}</span>
+</button>
+</sc-for>
+</div>
+</fieldset>
+</sc-for>
+
+<fieldset style="margin: 0; padding: 0; border: none">
+<legend style="padding: 0; margin-bottom: 4px; font-size: 24px; font-weight: 600">6. Extra's</legend>
+<p style="margin: 0 0 16px; color: #4a5566">Handige toevoegingen voor meer comfort. Een beenkleed houdt je warm en droog; een extra lader laadt een tweede accu tegelijk op.</p>
+<div style="display: flex; flex-direction: column; gap: 12px">
 <sc-for list="{{ cfg.extras }}" as="x" hint-placeholder-count="2">
 <label style="{{ x.style }}">
 <input type="checkbox" checked="{{ x.on }}" onChange="{{ x.toggle }}" style="width: 26px; height: 26px; margin: 2px 0 0; accent-color: #003070; flex: none">
@@ -239,22 +255,41 @@ a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform
 </sc-for>
 </div>
 </fieldset>
+
+<sc-for list="{{ cfg.groups3 }}" as="g" hint-placeholder-count="1">
+<sc-if value="{{ g.hasHead }}" hint-placeholder-val="{{ false }}"><div><h3 style="margin: 0 0 4px; font-size: 24px; font-weight: 600">{{ g.head }}</h3><p style="margin: 0; color: #4a5566">{{ g.headHint }}</p></div></sc-if>
+<fieldset style="margin: 0; padding: 0; border: none">
+<legend style="{{ g.legendStyle }}">{{ g.title }}</legend>
+<sc-if value="{{ g.hasHint }}" hint-placeholder-val="{{ true }}"><p style="margin: 0 0 16px; color: #4a5566">{{ g.hint }}</p></sc-if>
+<div style="{{ g.grid }}">
+<sc-for list="{{ g.opts }}" as="o" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{ o.selected }}" onClick="{{ o.pick }}" style="{{ o.style }}">
+<span style="display: block; font-size: 17px; font-weight: 600; white-space: nowrap">{{ o.title }}</span>
+<sc-if value="{{ o.hasDesc }}" hint-placeholder-val="{{ true }}"><span style="display: block; color: #3b4656; margin-top: 2px; font-size: 16px">{{ o.desc }}</span></sc-if>
+<span style="display: block; margin-top: 8px; font-weight: 700">{{ o.price }}</span>
+</button>
+</sc-for>
+</div>
+</fieldset>
+</sc-for>
 </div>
 
 <aside aria-label="Overzicht van je keuze" style="flex: 1 1 100%; min-width: 0; border-radius: 12px; background: #f7f5f1; padding: 24px">
 <img src="{{ cfg.img }}" alt="" style="width: 100%; height: 200px; object-fit: contain; display: block; mix-blend-mode: multiply">
-<h3 style="margin: 16px 0 16px; font-size: 26px; color: #003070; font-weight: 700">Jouw Bold Titan</h3>
-<dl style="margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 16px; font-size: 17px">
-<sc-for list="{{ cfg.lines }}" as="l" hint-placeholder-count="6">
-<dt style="color: #4a5566">{{ l.k }}</dt><dd style="margin: 0; font-weight: 500">{{ l.v }}</dd>
+<h3 style="margin: 16px 0 0; font-size: 26px; color: #003070; font-weight: 700">Jouw Bold Titan</h3>
+<div style="margin-top: 14px">
+<p style="margin: 0 0 6px; font-size: 17px; font-weight: 700; color: #003070">Jouw keuze</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: 16px">
+<sc-for list="{{ cfg.rows }}" as="r" hint-placeholder-count="6">
+<li style="display: flex; justify-content: space-between; gap: 12px"><span>{{ r.k }}</span><span style="{{ r.pStyle }}">{{ r.p }}</span></li>
 </sc-for>
-</dl>
-<div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #d9dee6">
-<p style="margin: 0; color: #4a5566; font-size: 16px">Totaalprijs</p>
-<p aria-live="polite" style="margin: 0; font-size: 32px; font-weight: 700; line-height: 1.15">{{ cfg.total }}</p>
-<p style="margin: 10px 0 0; font-size: 17px">Gespreid betalen kan ook. Vraag naar de mogelijkheden in je offerte.</p>
-<sc-if value="{{ cfg.tk }}" hint-placeholder-val="{{ true }}"><p style="margin: 6px 0 0; font-size: 15px; color: #1d7a46; font-weight: 500">{{ cfg.tkNote }}</p></sc-if>
-<p style="margin: 6px 0 0; font-size: 15px; color: #4a5566">Let op! Geld lenen kost geld.</p>
+</ul>
+</div>
+<div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #d9dee6; font-size: 16px">
+<div style="display: flex; justify-content: space-between; gap: 12px; color: #4a5566"><span>Vanafprijs</span><span>{{ cfg.baseTxt }}</span></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; color: #4a5566"><span>Gekozen opties</span><span>+ {{ cfg.optsTxt }}</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 6px"><p style="margin: 0; font-weight: 600; font-size: 17px">Jouw prijs <span style="font-weight: 400; color: #4a5566">(indicatie)</span></p><p aria-live="polite" style="margin: 0; font-size: 32px; font-weight: 700; line-height: 1.15">{{ cfg.total }}</p></div>
+<p style="margin: 6px 0 0; font-size: 15px; color: #3b4656">Of vanaf ca. <strong>{{ cfg.perMaand }} per maand</strong> bij gespreid betalen (indicatie, o.b.v. 60 maanden). Let op! Geld lenen kost geld.</p>
 </div>
 <div style="margin-top: 24px; padding-top: 22px; border-top: 1px solid #d9dee6">
 <sc-if value="{{ q.notSent }}" hint-placeholder-val="{{ true }}">
@@ -417,7 +452,7 @@ class Component extends DCLogic {
     // Titan-configurator
     function eur(n) { return '€' + n.toLocaleString('nl-NL'); }
     function opt(sel) {
-      return 'display: block; width: 100%; text-align: left; padding: 14px; border-radius: 8px; cursor: pointer; font: 400 15px/1.4 Poppins, sans-serif; color: #1a2433; ' + (sel ? 'border: 3px solid #003070; background: #e8eef7' : 'border: 2px solid #c9d3e2; background: #ffffff');
+      return 'display: block; width: 100%; text-align: left; padding: 14px 10px; border-radius: 8px; cursor: pointer; font: 400 15px/1.4 Poppins, sans-serif; color: #1a2433; ' + (sel ? 'border: 3px solid #003070; background: #e8eef7' : 'border: 2px solid #c9d3e2; background: #ffffff');
     }
     function pill(sel) {
       return 'min-height: 48px; padding: 0 20px; border-radius: 8px; cursor: pointer; font: 600 17px Poppins, sans-serif; ' + (sel ? 'border: 3px solid #003070; background: #e8eef7; color: #003070' : 'border: 2px solid #c9d3e2; background: #ffffff; color: #1a2433');
@@ -429,41 +464,64 @@ class Component extends DCLogic {
       { name: 'Glans rood', hex: '#8e1420', img: 'img/fe46fd75073f8daf51356082d67c5754.jpg' },
       { name: 'Glans zwart', hex: '#111316', img: 'img/6be7deade845577207168894d7dc1553.jpg' }
     ];
-    var GROUPS = [
-      { key: 'accu', title: '2. Accu', hint: 'Uitneembare lithium-accu’s van 10 kg per stuk, binnen op te laden.', cols: 2, opts: [
-        ['24', '24 Ah · 1 accu', 'Tot 60 km bereik', 0], ['48', '48 Ah · 2 accu’s', 'Tot 120 km bereik', 899]] }
+    var DEF = { snel: '25', accu: '24', wind: 'geen', duim: 'nee', voet: 'nee', hendel: 'rechts' };
+    function val(k) { return s[k] || DEF[k]; }
+    var G1 = [
+      { key: 'snel', title: '2. Snelheidsstand', hint: 'Bepaalt hoe hard je maximaal rijdt. 25 en 45 km/u zijn gratis, 32 km/u kost iets extra. Je hebt nooit een rijbewijs nodig.', cols: 3, label: 'Snelheid', opts: [
+        ['25', '25 km/u', '', 0], ['32', '32 km/u', '', 149], ['45', '45 km/u', '', 0]] },
+      { key: 'accu', title: '3. Tweede accu', hint: 'Met een tweede accu verdubbel je je bereik tot 120 km. Handig voor langere ritten, of om altijd een opgeladen accu achter de hand te hebben.', cols: 2, label: 'Accu', opts: [
+        ['24', 'Eén accu', 'Tot 60 km', 0], ['48', 'Twee accu’s', 'Tot 120 km', 899]] }
     ];
-    var EXTRAS = [['lader', 'Extra lader', 'Bijvoorbeeld voor een tweede adres', 100]];
+    var G2 = [
+      { key: 'wind', title: '5. Windscherm', hint: 'Incl. montage. Beschermt je tegen wind, regen en opspattend vuil. Laag voor wat beschutting, hoog voor maximale bescherming.', cols: 3, label: 'Windscherm', opts: [
+        ['geen', 'Geen', '', 0], ['laag', 'Laag', '50 cm', 60], ['hoog', 'Hoog', '70 cm', 120]] }
+    ];
+    var G3 = [
+      { key: 'duim', head: '7. Aanpassingen op maat', headHint: 'Niet verplicht. Rijd je liever met een andere bediening? Wij passen de Titan aan je wensen aan, bijvoorbeeld bij een beperkte hand- of voetfunctie.', title: 'Duimgas', cols: 3, label: 'Duimgas', opts: [
+        ['nee', 'Nee', '', 0], ['links', 'Links', '', 149], ['rechts', 'Rechts', '', 149]] },
+      { key: 'voet', title: 'Voetgas', cols: 3, label: 'Voetgas', opts: [
+        ['nee', 'Nee', '', 0], ['links', 'Links', '', 199], ['rechts', 'Rechts', '', 199]] },
+      { key: 'hendel', title: 'Gashendel', cols: 2, label: 'Gashendel', opts: [
+        ['rechts', 'Rechts', 'Standaard', 0], ['links', 'Naar links', '', 199]] }
+    ];
+    var EXTRAS = [['beenkleed', 'Beenkleed', 'Houdt je warm en droog.', 60], ['lader', 'Extra lader (60V 5A)', 'Laadt een tweede accu tegelijk op.', 100]];
     var cur = COLORS[s.color];
-    var total = BASE, lines = [['Kleur', cur.name]];
-    var groups = GROUPS.map(function (g) {
-      var val = s[g.key];
-      g.opts.forEach(function (o) { if (o[0] === val) { total += o[3]; lines.push([g.title.replace(/^\d+\.\s*/, ''), o[1] + (g.key === 'bed' && (val === 'duim' || val === 'voet') ? ' (' + s.side + ')' : '')]); } });
-      return {
-        title: g.title, hint: g.hint,
-        grid: 'display: grid; grid-template-columns: repeat(' + g.cols + ', minmax(0, 1fr)); gap: 12px',
-        opts: g.opts.map(function (o) {
-          var sel = val === o[0];
-          return { title: o[1], desc: o[2], price: o[3] ? '+ ' + eur(o[3]) : 'Inbegrepen', selected: sel, style: opt(sel), pick: function () { var ch = {}; ch[g.key] = o[0]; self.setState(ch); } };
-        }),
-        hasSide: g.key === 'bed' && (val === 'duim' || val === 'voet'),
-        sides: ['links', 'rechts'].map(function (sd) { return { title: sd.charAt(0).toUpperCase() + sd.slice(1), selected: s.side === sd, style: pill(s.side === sd), pick: function () { self.setState({ side: sd }); } }; })
-      };
-    });
-    lines.push(['Snelheid', '25 km/u']);
-    lines.push(['Windscherm', 'Laag (50 cm)']);
+    var optsTotal = 0, rows = [['Kleur ' + cur.name.toLowerCase(), 0]], lines = [['Kleur', cur.name]];
+    function mapGroups(list) {
+      return list.map(function (g) {
+        var v = val(g.key);
+        g.opts.forEach(function (o) {
+          if (o[0] !== v) return;
+          optsTotal += o[3];
+          var name = o[1] + (o[2] && g.key !== 'hendel' ? ' (' + o[2] + ')' : '');
+          if (!(g.key === 'duim' || g.key === 'voet') || v !== 'nee') { rows.push([g.label + ': ' + name, o[3]]); lines.push([g.label, name]); }
+        });
+        return {
+          title: g.title, hint: g.hint || '', hasHint: !!g.hint, head: g.head || '', headHint: g.headHint || '', hasHead: !!g.head,
+          legendStyle: 'padding: 0; font-weight: 600; margin-bottom: ' + (g.hint ? '4px' : '12px') + '; font-size: ' + (/^\d/.test(g.title) ? '24px' : '20px'),
+          grid: 'display: grid; grid-template-columns: repeat(' + g.cols + ', minmax(0, 1fr)); gap: 12px',
+          opts: g.opts.map(function (o) {
+            var sel = v === o[0];
+            return { title: o[1], desc: o[2], hasDesc: !!o[2], price: o[3] ? '+ ' + eur(o[3]) : (g.key === 'hendel' || g.key === 'snel' || o[0] === 'geen' || o[0] === 'nee' ? 'Gratis' : 'Inbegrepen'), selected: sel, style: opt(sel), pick: function () { var ch = {}; ch[g.key] = o[0]; self.setState(ch); } };
+          })
+        };
+      });
+    }
+    var groups = mapGroups(G1);
     var tk = s.tk !== false;
-    if (tk) lines.push(['Topkoffer', '€150 − €150 actiekorting = gratis']);
+    if (tk) { rows.push(['Topkoffer (actie, t.w.v. €150)', 0]); lines.push(['Topkoffer', 'gratis (actie)']); }
+    var groups2 = mapGroups(G2);
     var extras = EXTRAS.map(function (x) {
-      var on = !!s.ex[x[0]]; if (on) total += x[3];
+      var on = !!s.ex[x[0]]; if (on) { optsTotal += x[3]; rows.push([x[1], x[3]]); lines.push(['Extra', x[1]]); }
       return {
         title: x[1], desc: x[2], price: '+ ' + eur(x[3]), on: on,
         toggle: function () { var ne = Object.assign({}, self.state.ex); ne[x[0]] = !ne[x[0]]; self.setState({ ex: ne }); },
         style: 'display: flex; gap: 16px; align-items: flex-start; padding: 20px 22px; border-radius: 12px; cursor: pointer; ' + (on ? 'border: 3px solid #003070; background: #e8eef7' : 'border: 2px solid #c9d3e2; background: #ffffff')
       };
     });
-    var exNames = EXTRAS.filter(function (x) { return s.ex[x[0]]; }).map(function (x) { return x[1].toLowerCase(); });
-    lines.push(['Extra’s', exNames.length ? exNames.join(', ') : 'Geen']);
+    var groups3 = mapGroups(G3);
+    var total = BASE + optsTotal;
+    var rMaand = 0.10 / 12, perMaand = total * rMaand / (1 - Math.pow(1 + rMaand, -60));
     var cfg = {
       img: cur.img, alt: 'Bold Titan in ' + cur.name, colorName: cur.name, alwaysTrue: true,
       colors: COLORS.map(function (c, i) {
@@ -476,12 +534,14 @@ class Component extends DCLogic {
           dotLg: 'width: 34px; height: 34px; border-radius: 50%; display: block; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15); background: ' + c.hex
         };
       }),
-      groups: groups, extras: extras,
+      groups: groups, groups2: groups2, groups3: groups3, extras: extras,
       lines: lines.map(function (l) { return { k: l[0], v: l[1] }; }),
+      rows: rows.map(function (r) { return { k: r[0], p: r[1] ? '+ ' + eur(r[1]) : 'inbegrepen', free: !r[1], pStyle: 'font-weight: 700; white-space: nowrap; color: ' + (r[1] ? '#1a2433' : '#1d7a46') }; }),
+      baseTxt: eur(BASE), optsTxt: eur(optsTotal), perMaand: eur(Math.round(perMaand)),
       tk: tk, toggleTk: function () { self.setState({ tk: !(self.state.tk !== false) }); },
       tkNote: tk ? 'Incl. topkoffer t.w.v. €150, met €150 actiekorting.' : '',
       tkStyle: 'display: flex; gap: 16px; align-items: flex-start; padding: 20px 22px; border-radius: 12px; cursor: pointer; ' + (tk ? 'border: 3px solid #003070; background: #fff6f0' : 'border: 2px solid #c9d3e2; background: #ffffff'),
-      summary: lines.filter(function (l) { return l[1] !== 'Geen'; }).map(function (l) { return l[0] === 'Windscherm' ? 'windscherm laag' : l[0] === 'Topkoffer' ? 'topkoffer (gratis, actie)' : l[0] === 'Extra’s' ? l[1].toLowerCase() : l[1]; }).join(' · '),
+      summary: lines.slice(1).map(function (l) { return l[0] === 'Extra' ? l[1] : l[0] + ' ' + l[1]; }).join(' · '),
       total: eur(total)
     };
 
@@ -557,22 +617,23 @@ class Component extends DCLogic {
     ];
     var errs = {}, nErr = 0;
     DEF.forEach(function (d) { var e = d[4](F[d[0]] || ''); errs[d[0]] = e; if (e) nErr++; });
-    var config = 'Bold Titan · ' + lines.slice(1).map(function (l) { return l[0] === 'Topkoffer' ? 'topkoffer gratis (actie)' : l[1]; }).filter(function (v) { return v !== 'Geen'; }).join(' · ').replace('Gratis (actie)', 'topkoffer gratis') + ' · ' + cur.name + ' · ' + eur(total);
-    var Q = s.q || { naam: '', tel: '', mail: '' };
+    var config = 'Bold Titan · ' + cur.name + ' · ' + lines.slice(1).map(function (l) { return l[0] + ': ' + l[1]; }).join(' · ') + ' · ' + eur(total);
+    var Q = s.q || { naam: '', tel: '', mail: '', plaats: '' };
     var QDEF = [
       ['naam', 'Naam', 'text', 'name', function (v) { return v.trim().length > 1 ? '' : 'Vul je naam in.'; }],
       ['tel', 'Telefoonnummer', 'tel', 'tel', function (v) { return v.replace(/\D/g, '').length >= 10 ? '' : 'Vul een telefoonnummer van 10 cijfers in.'; }],
-      ['mail', 'E-mailadres', 'email', 'email', function (v) { return /^\S+@\S+\.\S+$/.test(v.trim()) ? '' : 'Vul een geldig e-mailadres in.'; }]
+      ['mail', 'E-mailadres', 'email', 'email', function (v) { return /^\S+@\S+\.\S+$/.test(v.trim()) ? '' : 'Vul een geldig e-mailadres in.'; }],
+      ['plaats', 'Woonplaats', 'text', 'address-level2', function (v) { return v.trim().length > 1 ? '' : 'Vul je woonplaats in.'; }]
     ];
     var qErr = 0, qErrs = {};
     QDEF.forEach(function (d) { var e = d[4](Q[d[0]] || ''); qErrs[d[0]] = e; if (e) qErr++; });
     var q = {
       notSent: !s.qsent, sent: !!s.qsent, summary: config, firstName: (Q.naam || '').trim().split(' ')[0] || '',
-      label: s.qsending ? 'Bezig met versturen…' : 'Verstuur offerteaanvraag',
+      label: s.qsending ? 'Bezig met versturen…' : 'Vraag deze samenstelling aan',
       fields: QDEF.map(function (d) {
         var showErr = !!s.qtried && !!qErrs[d[0]];
         return { id: 'q-' + d[0], label: d[1], type: d[2], ac: d[3], value: Q[d[0]], hasErr: showErr, err: qErrs[d[0]],
-          onChange: function (e) { var nq = Object.assign({ naam: '', tel: '', mail: '' }, self.state.q); nq[d[0]] = e.target.value; self.setState({ q: nq }); },
+          onChange: function (e) { var nq = Object.assign({ naam: '', tel: '', mail: '', plaats: '' }, self.state.q); nq[d[0]] = e.target.value; self.setState({ q: nq }); },
           style: 'min-height: 54px; padding: 0 16px; border-radius: 8px; font: 400 18px Poppins, sans-serif; color: #1a2433; background: #ffffff; width: 100%; border: ' + (showErr ? '2px solid #b42318' : '2px solid #8a96a8') };
       }),
       submit: function () {
@@ -581,7 +642,7 @@ class Component extends DCLogic {
         self.setState({ qsending: true, qtried: false });
         self.later(1100, function () { self.setState({ qsending: false, qsent: true }); });
       },
-      reset: function () { self.setState({ qsent: false, q: { naam: '', tel: '', mail: '' } }); }
+      reset: function () { self.setState({ qsent: false, q: { naam: '', tel: '', mail: '', plaats: '' } }); }
     };
     var form = {
       notSent: !s.sent, sent: s.sent, hasErrors: s.tried && nErr > 0,
