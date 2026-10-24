@@ -174,7 +174,7 @@ a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform
 
 <fieldset style="margin: 0; padding: 0; border: none">
 <legend style="padding: 0; margin-bottom: 4px; font-size: 24px; font-weight: 600">1. Kleur</legend>
-<p style="margin: 0 0 16px; color: #4a5566">Kies de kleur die bij je past. Alle kleuren kosten hetzelfde, geen meerprijs.</p>
+<p style="margin: 0 0 16px; color: #4a5566">Kies de kleur die bij je past.</p>
 <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
 <sc-for list="{{ cfg.colors }}" as="c" hint-placeholder-count="4">
 <button type="button" aria-pressed="{{ c.selected }}" onClick="{{ c.pick }}" style="{{ c.card }}"><span style="{{ c.dotLg }}"></span><span>{{ c.name }}</span></button>
@@ -183,7 +183,7 @@ a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform
 </fieldset>
 
 <sc-for list="{{ cfg.groups }}" as="g" hint-placeholder-count="1">
-<sc-if value="{{ g.hasHead }}" hint-placeholder-val="{{ false }}"><div><h3 style="margin: 0 0 4px; font-size: 24px; font-weight: 600">{{ g.head }}</h3><p style="margin: 0; color: #4a5566">{{ g.headHint }}</p></div></sc-if>
+<sc-if value="{{ g.hasHead }}" hint-placeholder-val="{{ false }}"><div style="margin-bottom: -24px"><h3 style="margin: 0; font-size: 24px; font-weight: 600">{{ g.head }}</h3></div></sc-if>
 <fieldset style="margin: 0; padding: 0; border: none">
 <legend style="{{ g.legendStyle }}">{{ g.title }}</legend>
 <sc-if value="{{ g.hasHint }}" hint-placeholder-val="{{ true }}"><p style="margin: 0 0 16px; color: #4a5566">{{ g.hint }}</p></sc-if>
@@ -192,7 +192,7 @@ a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform
 <button type="button" aria-pressed="{{ o.selected }}" onClick="{{ o.pick }}" style="{{ o.style }}">
 <span style="display: block; font-size: 19px; font-weight: 600">{{ o.title }}</span>
 <sc-if value="{{ o.hasDesc }}" hint-placeholder-val="{{ true }}"><span style="display: block; color: #3b4656; margin-top: 2px; font-size: 16px">{{ o.desc }}</span></sc-if>
-<span style="display: block; margin-top: 8px; font-weight: 700">{{ o.price }}</span>
+<span style="display: block; margin-top: 8px; font-weight: 400; color: #3b4656">{{ o.price }}</span>
 </button>
 </sc-for>
 </div>
@@ -201,16 +201,16 @@ a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform
 
 <fieldset style="margin: 0; padding: 0; border: none">
 <legend style="padding: 0; margin-bottom: 4px; font-size: 24px; font-weight: 600">4. Topkoffer</legend>
-<p style="margin: 0 0 16px; color: #4a5566">Afsluitbare koffer achterop voor boodschappen, jas of oplader. Tijdelijk gratis bij elke Titan.</p>
+<p style="margin: 0 0 16px; color: #4a5566">Tijdelijk gratis bij elke Titan.</p>
 <label style="{{ cfg.tkStyle }}">
 <input type="checkbox" checked="{{ cfg.tk }}" onChange="{{ cfg.toggleTk }}" style="width: 26px; height: 26px; margin: 2px 0 0; accent-color: #003070; flex: none">
 <span style="flex: 1"><span style="display: block; font-size: 19px; font-weight: 600">Inbegrepen</span><span style="display: block; color: #3b4656; font-size: 16px">Tijdelijke actie, ter waarde van €150</span></span>
-<span style="display: flex; flex-direction: column; align-items: flex-end; white-space: nowrap"><span style="color: #4a5566; text-decoration: line-through">€150</span><span style="font-weight: 700; color: #1d7a46">Nu gratis</span></span>
+<span style="display: flex; flex-direction: column; align-items: flex-end; white-space: nowrap"><span style="color: #4a5566; text-decoration: line-through">€150</span><span style="font-weight: 500; color: #1d7a46">Nu gratis</span></span>
 </label>
 </fieldset>
 
 <sc-for list="{{ cfg.groups2 }}" as="g" hint-placeholder-count="1">
-<sc-if value="{{ g.hasHead }}" hint-placeholder-val="{{ false }}"><div><h3 style="margin: 0 0 4px; font-size: 24px; font-weight: 600">{{ g.head }}</h3><p style="margin: 0; color: #4a5566">{{ g.headHint }}</p></div></sc-if>
+<sc-if value="{{ g.hasHead }}" hint-placeholder-val="{{ false }}"><div style="margin-bottom: -24px"><h3 style="margin: 0; font-size: 24px; font-weight: 600">{{ g.head }}</h3></div></sc-if>
 <fieldset style="margin: 0; padding: 0; border: none">
 <legend style="{{ g.legendStyle }}">{{ g.title }}</legend>
 <sc-if value="{{ g.hasHint }}" hint-placeholder-val="{{ true }}"><p style="margin: 0 0 16px; color: #4a5566">{{ g.hint }}</p></sc-if>
@@ -219,7 +219,7 @@ a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform
 <button type="button" aria-pressed="{{ o.selected }}" onClick="{{ o.pick }}" style="{{ o.style }}">
 <span style="display: block; font-size: 19px; font-weight: 600">{{ o.title }}</span>
 <sc-if value="{{ o.hasDesc }}" hint-placeholder-val="{{ true }}"><span style="display: block; color: #3b4656; margin-top: 2px; font-size: 16px">{{ o.desc }}</span></sc-if>
-<span style="display: block; margin-top: 8px; font-weight: 700">{{ o.price }}</span>
+<span style="display: block; margin-top: 8px; font-weight: 400; color: #3b4656">{{ o.price }}</span>
 </button>
 </sc-for>
 </div>
@@ -228,20 +228,20 @@ a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform
 
 <fieldset style="margin: 0; padding: 0; border: none">
 <legend style="padding: 0; margin-bottom: 4px; font-size: 24px; font-weight: 600">6. Extra's</legend>
-<p style="margin: 0 0 16px; color: #4a5566">Handige toevoegingen voor meer comfort. Een beenkleed houdt je warm en droog; een extra lader laadt een tweede accu tegelijk op.</p>
+<p style="margin: 0 0 16px; color: #4a5566">Toevoegingen voor meer comfort.</p>
 <div style="display: flex; flex-direction: column; gap: 12px">
 <sc-for list="{{ cfg.extras }}" as="x" hint-placeholder-count="2">
 <label style="{{ x.style }}">
 <input type="checkbox" checked="{{ x.on }}" onChange="{{ x.toggle }}" style="width: 26px; height: 26px; margin: 2px 0 0; accent-color: #003070; flex: none">
 <span style="flex: 1"><span style="display: block; font-size: 19px; font-weight: 600">{{ x.title }}</span><span style="display: block; color: #3b4656; font-size: 16px">{{ x.desc }}</span></span>
-<span style="font-weight: 700; white-space: nowrap">{{ x.price }}</span>
+<span style="font-weight: 400; white-space: nowrap; color: #3b4656">{{ x.price }}</span>
 </label>
 </sc-for>
 </div>
 </fieldset>
 
 <sc-for list="{{ cfg.groups3 }}" as="g" hint-placeholder-count="1">
-<sc-if value="{{ g.hasHead }}" hint-placeholder-val="{{ false }}"><div><h3 style="margin: 0 0 4px; font-size: 24px; font-weight: 600">{{ g.head }}</h3><p style="margin: 0; color: #4a5566">{{ g.headHint }}</p></div></sc-if>
+<sc-if value="{{ g.hasHead }}" hint-placeholder-val="{{ false }}"><div style="margin-bottom: -24px"><h3 style="margin: 0; font-size: 24px; font-weight: 600">{{ g.head }}</h3></div></sc-if>
 <fieldset style="margin: 0; padding: 0; border: none">
 <legend style="{{ g.legendStyle }}">{{ g.title }}</legend>
 <sc-if value="{{ g.hasHint }}" hint-placeholder-val="{{ true }}"><p style="margin: 0 0 16px; color: #4a5566">{{ g.hint }}</p></sc-if>
@@ -250,7 +250,7 @@ a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform
 <button type="button" aria-pressed="{{ o.selected }}" onClick="{{ o.pick }}" style="{{ o.style }}">
 <span style="display: block; font-size: 19px; font-weight: 600">{{ o.title }}</span>
 <sc-if value="{{ o.hasDesc }}" hint-placeholder-val="{{ true }}"><span style="display: block; color: #3b4656; margin-top: 2px; font-size: 16px">{{ o.desc }}</span></sc-if>
-<span style="display: block; margin-top: 8px; font-weight: 700">{{ o.price }}</span>
+<span style="display: block; margin-top: 8px; font-weight: 400; color: #3b4656">{{ o.price }}</span>
 </button>
 </sc-for>
 </div>
@@ -273,7 +273,7 @@ a[style*="border-radius"]:active,button[style*="border-radius"]:active{transform
 <div style="display: flex; justify-content: space-between; gap: 12px; color: #4a5566"><span>Vanafprijs</span><span>{{ cfg.baseTxt }}</span></div>
 <div style="display: flex; justify-content: space-between; gap: 12px; color: #4a5566"><span>Gekozen opties</span><span>+ {{ cfg.optsTxt }}</span></div>
 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 6px"><p style="margin: 0; font-weight: 600; font-size: 17px">Jouw prijs <span style="font-weight: 400; color: #4a5566">(indicatie)</span></p><p aria-live="polite" style="margin: 0; font-size: 36px; font-weight: 700; line-height: 1.15">{{ cfg.total }}</p></div>
-<p style="margin: 6px 0 0; font-size: 15px; color: #3b4656">Of vanaf ca. <strong>{{ cfg.perMaand }} per maand</strong> bij gespreid betalen (indicatie, o.b.v. 60 maanden). Let op! Geld lenen kost geld.</p>
+<p style="margin: 6px 0 0; font-size: 15px; color: #3b4656">Of vanaf ca. {{ cfg.perMaand }} per maand bij gespreid betalen (indicatie, o.b.v. 60 maanden). Let op! Geld lenen kost geld.</p>
 </div>
 <div aria-hidden="true" style="height: 18px; flex: none"></div>
 <div style="padding-top: 18px; border-top: 1px solid #d9dee6">
@@ -461,17 +461,17 @@ class Component extends DCLogic {
     var DEF = { snel: '25', accu: '24', wind: 'geen', duim: 'nee', voet: 'nee', hendel: 'rechts' };
     function val(k) { return s[k] || DEF[k]; }
     var G1 = [
-      { key: 'snel', title: '2. Snelheidsstand', hint: 'Bepaalt hoe hard je maximaal rijdt. 25 en 45 km/u zijn gratis, 32 km/u kost iets extra. Je hebt nooit een rijbewijs nodig.', cols: 3, label: 'Snelheid', opts: [
+      { key: 'snel', title: '2. Snelheidsstand', hint: 'Bepaalt hoe hard je maximaal kunt rijden.', cols: 3, label: 'Snelheid', opts: [
         ['25', '25 km/u', '', 0], ['32', '32 km/u', '', 149], ['45', '45 km/u', '', 0]] },
-      { key: 'accu', title: '3. Tweede accu', hint: 'Met een tweede accu verdubbel je je bereik tot 120 km. Handig voor langere ritten, of om altijd een opgeladen accu achter de hand te hebben.', cols: 2, label: 'Accu', opts: [
+      { key: 'accu', title: '3. Tweede accu', hint: 'Met een tweede accu verdubbel je je bereik tot 120 km.', cols: 2, label: 'Accu', opts: [
         ['24', 'Eén accu', 'Tot 60 km', 0], ['48', 'Twee accu’s', 'Tot 120 km', 899]] }
     ];
     var G2 = [
-      { key: 'wind', title: '5. Windscherm', hint: 'Incl. montage. Beschermt je tegen wind, regen en opspattend vuil. Laag voor wat beschutting, hoog voor maximale bescherming.', cols: 3, label: 'Windscherm', opts: [
+      { key: 'wind', title: '5. Windscherm', hint: 'Incl. montage.', cols: 3, label: 'Windscherm', opts: [
         ['geen', 'Geen', '', 0], ['laag', 'Laag', '50 cm', 60], ['hoog', 'Hoog', '70 cm', 120]] }
     ];
     var G3 = [
-      { key: 'duim', head: '7. Aanpassingen op maat', headHint: 'Niet verplicht. Rijd je liever met een andere bediening? Wij passen de Titan aan je wensen aan, bijvoorbeeld bij een beperkte hand- of voetfunctie.', title: 'Duimgas', cols: 3, label: 'Duimgas', opts: [
+      { key: 'duim', head: '7. Aanpassingen op maat', headHint: '', title: 'Duimgas', cols: 3, label: 'Duimgas', opts: [
         ['nee', 'Nee', '', 0], ['links', 'Links', '', 149], ['rechts', 'Rechts', '', 149]] },
       { key: 'voet', title: 'Voetgas', cols: 3, label: 'Voetgas', opts: [
         ['nee', 'Nee', '', 0], ['links', 'Links', '', 199], ['rechts', 'Rechts', '', 199]] },
@@ -530,7 +530,7 @@ class Component extends DCLogic {
       }),
       groups: groups, groups2: groups2, groups3: groups3, extras: extras,
       lines: lines.map(function (l) { return { k: l[0], v: l[1] }; }),
-      rows: rows.map(function (r) { return { k: r[0], p: r[1] ? '+ ' + eur(r[1]) : 'inbegrepen', free: !r[1], pStyle: 'font-weight: 700; white-space: nowrap; color: ' + (r[1] ? '#1a2433' : '#1d7a46') }; }),
+      rows: rows.map(function (r) { return { k: r[0], p: r[1] ? '+ ' + eur(r[1]) : 'inbegrepen', free: !r[1], pStyle: 'font-weight: 400; white-space: nowrap; color: ' + (r[1] ? '#1a2433' : '#1d7a46') }; }),
       baseTxt: eur(BASE), optsTxt: eur(optsTotal), perMaand: eur(Math.round(perMaand)),
       tk: tk, toggleTk: function () { self.setState({ tk: !(self.state.tk !== false) }); },
       tkNote: tk ? 'Incl. topkoffer t.w.v. €150, met €150 actiekorting.' : '',
